@@ -1,6 +1,7 @@
 package ua.ukrposhta.Pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -15,8 +16,12 @@ public class HomePage {
     private final SelenideElement firstSlickButton = $x("/html/body/div[3]/div/div[1]/ul/li[1]");
     private final SelenideElement secondSlickButton = $x("/html/body/div[3]/div/div[1]/ul/li[2]");
     private final SelenideElement thirdSlickButton = $x("//html/body/div[3]/div/div[1]/ul/li[3]");
-    private final SelenideElement sliderItemContent = $x("/html/body/div[3]/div/div[1]/div/div/a[1]/div[2]/div");
-
+    private final SelenideElement firstSliderItemContent = $x("/html/body/div[3]/div/div[1]/div/div/a[1]/div[2]/div/h2");
+    private final SelenideElement secondSliderItemContent = $x("/html/body/div[3]/div/div[1]/div/div/a[2]/div[2]/div/h2");
+    private final SelenideElement thirdSliderItemContent = $x("/html/body/div[3]/div/div[1]/div/div/a[3]/div[2]/div/h2");
+    private final SelenideElement indexSearchButton = $x("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/a");
+    private final SelenideElement IndexPageHeader = $x("/html/body/app-root/div/div/div/div/h3");
+    private  final SelenideElement searchIndexInput = $x("//*[@id=\"main\"]/div/div[6]/div/div/div/div/form/div/div[1]/input");
 
     /**
      * Click on the language selection button
@@ -93,7 +98,7 @@ public class HomePage {
      * Verify first slider item content header
      */
     public boolean firstSliderContentHeader() {
-        String headerText = sliderItemContent.getText();
+        String headerText = firstSliderItemContent.getText();
         return headerText.equals("Замовляйте онлайн");
     }
 
@@ -101,7 +106,7 @@ public class HomePage {
      * Verify second slider item content header
      */
     public boolean secondSliderContentHeader() {
-        String headerText = sliderItemContent.getText();
+        String headerText = secondSliderItemContent.getText();
         return headerText.equals("Купуйте з користю для себе та країни");
     }
 
@@ -109,8 +114,37 @@ public class HomePage {
      * Verify third slider item content header
      */
     public boolean thirdSliderContentHeader() {
-        String headerText = sliderItemContent.getText();
+        String headerText = thirdSliderItemContent.getText();
         return headerText.equals("Продавайте товари за кордон");
+    }
+
+    /**
+     * Click on the indexSearchButton
+     */
+    public void clickOnTheIndexSearchButton () {
+        indexSearchButton.click();
+    }
+
+    /**
+     * Verify that the Index search page is opened
+     */
+    public boolean indexSearchPageOpened () {
+        String headerText = IndexPageHeader.getText();
+        return headerText.equals("Знайти поштовий індекс");
+    }
+
+    /**
+     * Scroll to the index search input field
+     */
+    public void scrollToIndexSearchInput () {
+        searchIndexInput.scrollTo();
+    }
+
+    /**
+     * Send keys to the index search input
+     */
+    public void sendKeysToIndexSearchInput () {
+        searchIndexInput.sendKeys("Дніпро", Keys.ENTER);
     }
 }
 

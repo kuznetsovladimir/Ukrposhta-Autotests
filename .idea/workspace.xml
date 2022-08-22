@@ -54,30 +54,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="TestNG.HomePageTests.verifySliderItemsHeaders">
-    <configuration name="HomePageTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HomePageTests.changeLanguage" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="METHOD_NAME" value="changeLanguage" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.HomePageTests.openIndexSearchPageFromInput">
     <configuration name="HomePageTests.changeLanguageToEn" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
@@ -90,11 +67,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTests.changeLanguageToRu" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="HomePageTests.checkSliderItemContent" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="METHOD_NAME" value="changeLanguageToRu" />
+      <option name="METHOD_NAME" value="checkSliderItemContent" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomePageTests.openIndexSearchPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
+      <option name="METHOD_NAME" value="openIndexSearchPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomePageTests.openIndexSearchPageFromInput" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
+      <option name="METHOD_NAME" value="openIndexSearchPageFromInput" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -116,11 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.HomePageTests.openIndexSearchPageFromInput" />
+        <item itemvalue="TestNG.HomePageTests.openIndexSearchPage" />
+        <item itemvalue="TestNG.HomePageTests.checkSliderItemContent" />
         <item itemvalue="TestNG.HomePageTests.verifySliderItemsHeaders" />
         <item itemvalue="TestNG.HomePageTests.changeLanguageToEn" />
-        <item itemvalue="TestNG.HomePageTests" />
-        <item itemvalue="TestNG.HomePageTests.changeLanguageToRu" />
-        <item itemvalue="TestNG.HomePageTests.changeLanguage" />
       </list>
     </recent_temporary>
   </component>
