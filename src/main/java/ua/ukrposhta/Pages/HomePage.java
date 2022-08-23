@@ -22,6 +22,7 @@ public class HomePage {
     private final SelenideElement indexSearchButton = $x("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/a");
     private final SelenideElement IndexPageHeader = $x("/html/body/app-root/div/div/div/div/h3");
     private  final SelenideElement searchIndexInput = $x("//*[@id=\"main\"]/div/div[6]/div/div/div/div/form/div/div[1]/input");
+    private final SelenideElement registrationButton = $x("/html/body/header/div[2]/div[1]/div/div[2]/a[2]/span");
 
     /**
      * Click on the language selection button
@@ -145,6 +146,13 @@ public class HomePage {
      */
     public void sendKeysToIndexSearchInput () {
         searchIndexInput.sendKeys("Дніпро", Keys.ENTER);
+    }
+
+    /**
+     * Click on the Registration button
+     */
+    public void clickOnTheRegistrationButton () {
+        registrationButton.click();
     }
 }
 
