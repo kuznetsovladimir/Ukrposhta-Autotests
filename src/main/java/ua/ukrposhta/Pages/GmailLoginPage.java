@@ -8,6 +8,7 @@ public class GmailLoginPage {
     private final SelenideElement emailInputField = $x("//*[@id=\"identifierId\"]");
     private final SelenideElement emailSectionHeader = $x("//*[@id=\"headingText\"]/span");
     private final SelenideElement nextButton = $x("//*[@id=\"identifierNext\"]/div/button");
+    public final SelenideElement againButton = $x("/html/body/div[1]/div[1]/div[2]/div/c-wiz/div[2]/div[2]/div/div[2]/div/div/div/div/div/a");
     /**
      * Verify that gmail insert email page opened
      */

@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/GmailLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/GmailLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +53,12 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="TestNG.LoginModuleTests.resetPassword">
-    <configuration name="HomePageTests.checkSliderItemContent" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.LoginModuleTests.loginWithNoData">
+    <configuration name="LoginModuleTests.loginWithInvalidEmail" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="METHOD_NAME" value="checkSliderItemContent" />
+      <option name="MAIN_CLASS_NAME" value="LoginModuleTests" />
+      <option name="METHOD_NAME" value="loginWithInvalidEmail" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -65,11 +66,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTests.openIndexSearchPage" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginModuleTests.loginWithInvalidPassword" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="METHOD_NAME" value="openIndexSearchPage" />
+      <option name="MAIN_CLASS_NAME" value="LoginModuleTests" />
+      <option name="METHOD_NAME" value="loginWithInvalidPassword" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -77,11 +78,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTests.openIndexSearchPageFromInput" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginModuleTests.loginWithNoData" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="METHOD_NAME" value="openIndexSearchPageFromInput" />
+      <option name="MAIN_CLASS_NAME" value="LoginModuleTests" />
+      <option name="METHOD_NAME" value="loginWithNoData" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -89,11 +90,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTests.verifySliderItemsHeaders" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginModuleTests.loginWithValidCreds" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="METHOD_NAME" value="verifySliderItemsHeaders" />
+      <option name="MAIN_CLASS_NAME" value="LoginModuleTests" />
+      <option name="METHOD_NAME" value="loginWithValidCreds" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -115,11 +116,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LoginModuleTests.loginWithNoData" />
+        <item itemvalue="TestNG.LoginModuleTests.loginWithInvalidPassword" />
+        <item itemvalue="TestNG.LoginModuleTests.loginWithInvalidEmail" />
+        <item itemvalue="TestNG.LoginModuleTests.loginWithValidCreds" />
         <item itemvalue="TestNG.LoginModuleTests.resetPassword" />
-        <item itemvalue="TestNG.HomePageTests.openIndexSearchPageFromInput" />
-        <item itemvalue="TestNG.HomePageTests.openIndexSearchPage" />
-        <item itemvalue="TestNG.HomePageTests.checkSliderItemContent" />
-        <item itemvalue="TestNG.HomePageTests.verifySliderItemsHeaders" />
       </list>
     </recent_temporary>
   </component>

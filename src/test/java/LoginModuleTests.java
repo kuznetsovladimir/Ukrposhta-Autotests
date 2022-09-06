@@ -1,10 +1,8 @@
-import Utils.BrowserActions;
 import Utils.WebDriverFactory;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import ua.ukrposhta.Pages.GmailLoginPage;
 import ua.ukrposhta.Pages.HomePage;
 import ua.ukrposhta.Pages.PersonalAccountPage;
 
@@ -21,7 +19,7 @@ public class LoginModuleTests {
         acceptCookiesButton.click();
     }
 
-    @Test
+    /*@Test
     public void resetPassword () throws InterruptedException {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage();
         HomePage homePage = new HomePage();
@@ -39,11 +37,81 @@ public class LoginModuleTests {
         Thread.sleep(1500);
         Assert.assertTrue(personalAccountPage.checkMailboxMessageDisplayed());
         Thread.sleep(3000);
-        */browser.openNewTab();
+        browser.openNewTab();
         Thread.sleep(2000);
         Assert.assertTrue(gmail.checkEmailInsertSectionOpened());
         gmail.fillEmailField();
         gmail.clickOnTheNextButton();
-        Thread.sleep(10000);
+        Thread.sleep(3000);
+        gmail.againButton.click();
+        Thread.sleep(5000);
+    }*/
+
+    @Test
+    public void loginWithValidCreds () throws InterruptedException {
+        HomePage homePage = new HomePage();
+        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
+
+        homePage.clickOnTheRegistrationButton();
+        Thread.sleep(3000);
+        Assert.assertTrue(personalAccountPage.registrationPageOpened());
+        personalAccountPage.clickOnTheLogInButton();
+        personalAccountPage.fillTheEmailField();
+        personalAccountPage.fillPasswordField();
+        personalAccountPage.clickOnTheEnterButton();
+        Thread.sleep(3000);
+        Assert.assertTrue(personalAccountPage.verifyLogIn());
+
+    }
+
+    @Test
+    public void loginWithInvalidEmail () throws InterruptedException {
+        HomePage homePage = new HomePage();
+        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
+
+        homePage.clickOnTheRegistrationButton();
+        Thread.sleep(3000);
+        Assert.assertTrue(personalAccountPage.registrationPageOpened());
+        personalAccountPage.clickOnTheLogInButton();
+        personalAccountPage.fillEmailFieldInvalid();
+        personalAccountPage.fillPasswordField();
+        Assert.assertTrue(personalAccountPage.verifyPasswordIsHidden(personalAccountPage.getValidPass()));
+        personalAccountPage.clickOnTheEnterButton();
+        Thread.sleep(3000);
+        Assert.assertTrue(personalAccountPage.verifyErrorMessageMail());
+
+    }
+
+    @Test
+    public void loginWithInvalidPassword () throws InterruptedException {
+        HomePage homePage = new HomePage();
+        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
+
+        homePage.clickOnTheRegistrationButton();
+        Thread.sleep(3000);
+        Assert.assertTrue(personalAccountPage.registrationPageOpened());
+        personalAccountPage.clickOnTheLogInButton();
+        personalAccountPage.fillTheEmailField();
+        personalAccountPage.fillPasswordFieldInvalid();
+        Assert.assertTrue(personalAccountPage.verifyPasswordIsHidden(personalAccountPage.getInvalidPass()));
+        personalAccountPage.clickOnTheEnterButton();
+        Thread.sleep(3000);
+        Assert.assertTrue(personalAccountPage.verifyErrorMessagePass());
+
+    }
+
+    @Test
+    public void loginWithNoData () throws InterruptedException {
+        HomePage homePage = new HomePage();
+        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
+
+        homePage.clickOnTheRegistrationButton();
+        Thread.sleep(3000);
+        Assert.assertTrue(personalAccountPage.registrationPageOpened());
+        personalAccountPage.clickOnTheLogInButton();
+        personalAccountPage.clickOnTheEnterButton();
+        Thread.sleep(3000);
+        Assert.assertTrue(personalAccountPage.authorizationSectionOpened());
+
     }
 }
