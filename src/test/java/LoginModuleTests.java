@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.ukrposhta.Pages.HomePage;
-import ua.ukrposhta.Pages.PersonalAccountPage;
+import ua.ukrposhta.Pages.LogInPage;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
@@ -50,68 +50,68 @@ public class LoginModuleTests {
     @Test
     public void loginWithValidCreds () throws InterruptedException {
         HomePage homePage = new HomePage();
-        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
+        LogInPage logInPage = new LogInPage();
 
         homePage.clickOnTheRegistrationButton();
         Thread.sleep(3000);
-        Assert.assertTrue(personalAccountPage.registrationPageOpened());
-        personalAccountPage.clickOnTheLogInButton();
-        personalAccountPage.fillTheEmailField();
-        personalAccountPage.fillPasswordField();
-        personalAccountPage.clickOnTheEnterButton();
+        Assert.assertTrue(logInPage.registrationPageOpened());
+        logInPage.clickOnTheLogInButton();
+        logInPage.fillTheEmailField(logInPage.getValidEmail());
+        logInPage.fillPasswordField(logInPage.getValidPass());
+        logInPage.clickOnTheEnterButton();
         Thread.sleep(3000);
-        Assert.assertTrue(personalAccountPage.verifyLogIn());
+        Assert.assertTrue(logInPage.verifyLogIn());
 
     }
 
     @Test
     public void loginWithInvalidEmail () throws InterruptedException {
         HomePage homePage = new HomePage();
-        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
+        LogInPage logInPage = new LogInPage();
 
         homePage.clickOnTheRegistrationButton();
         Thread.sleep(3000);
-        Assert.assertTrue(personalAccountPage.registrationPageOpened());
-        personalAccountPage.clickOnTheLogInButton();
-        personalAccountPage.fillEmailFieldInvalid();
-        personalAccountPage.fillPasswordField();
-        Assert.assertTrue(personalAccountPage.verifyPasswordIsHidden(personalAccountPage.getValidPass()));
-        personalAccountPage.clickOnTheEnterButton();
+        Assert.assertTrue(logInPage.registrationPageOpened());
+        logInPage.clickOnTheLogInButton();
+        logInPage.fillEmailFieldInvalid(logInPage.getInvalidEmail());
+        logInPage.fillPasswordField(logInPage.getValidPass());
+        Assert.assertTrue(logInPage.verifyPasswordIsHidden(logInPage.getValidPass()));
+        logInPage.clickOnTheEnterButton();
         Thread.sleep(3000);
-        Assert.assertTrue(personalAccountPage.verifyErrorMessageMail());
+        Assert.assertTrue(logInPage.verifyErrorMessageMail());
 
     }
 
     @Test
     public void loginWithInvalidPassword () throws InterruptedException {
         HomePage homePage = new HomePage();
-        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
+        LogInPage logInPage = new LogInPage();
 
         homePage.clickOnTheRegistrationButton();
         Thread.sleep(3000);
-        Assert.assertTrue(personalAccountPage.registrationPageOpened());
-        personalAccountPage.clickOnTheLogInButton();
-        personalAccountPage.fillTheEmailField();
-        personalAccountPage.fillPasswordFieldInvalid();
-        Assert.assertTrue(personalAccountPage.verifyPasswordIsHidden(personalAccountPage.getInvalidPass()));
-        personalAccountPage.clickOnTheEnterButton();
+        Assert.assertTrue(logInPage.registrationPageOpened());
+        logInPage.clickOnTheLogInButton();
+        logInPage.fillTheEmailField(logInPage.getValidEmail());
+        logInPage.fillPasswordFieldInvalid(logInPage.getInvalidPass());
+        Assert.assertTrue(logInPage.verifyPasswordIsHidden(logInPage.getInvalidPass()));
+        logInPage.clickOnTheEnterButton();
         Thread.sleep(3000);
-        Assert.assertTrue(personalAccountPage.verifyErrorMessagePass());
+        Assert.assertTrue(logInPage.verifyErrorMessagePass());
 
     }
 
     @Test
     public void loginWithNoData () throws InterruptedException {
         HomePage homePage = new HomePage();
-        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
+        LogInPage logInPage = new LogInPage();
 
         homePage.clickOnTheRegistrationButton();
         Thread.sleep(3000);
-        Assert.assertTrue(personalAccountPage.registrationPageOpened());
-        personalAccountPage.clickOnTheLogInButton();
-        personalAccountPage.clickOnTheEnterButton();
+        Assert.assertTrue(logInPage.registrationPageOpened());
+        logInPage.clickOnTheLogInButton();
+        logInPage.clickOnTheEnterButton();
         Thread.sleep(3000);
-        Assert.assertTrue(personalAccountPage.authorizationSectionOpened());
+        Assert.assertTrue(logInPage.authorizationSectionOpened());
 
     }
 }

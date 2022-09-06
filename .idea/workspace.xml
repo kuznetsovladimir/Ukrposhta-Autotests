@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/GmailLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/GmailLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/LogInPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +26,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -48,12 +55,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../QA courses/array" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="TestNG.LoginModuleTests.loginWithNoData">
+  <component name="RunManager" selected="TestNG.PersonalAccountPageTests.sidebarNavigation">
     <configuration name="LoginModuleTests.loginWithInvalidEmail" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
@@ -102,11 +109,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginModuleTests.resetPassword" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PersonalAccountPageTests.sidebarNavigation" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginModuleTests" />
-      <option name="METHOD_NAME" value="resetPassword" />
+      <option name="MAIN_CLASS_NAME" value="PersonalAccountPageTests" />
+      <option name="METHOD_NAME" value="sidebarNavigation" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -116,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.PersonalAccountPageTests.sidebarNavigation" />
         <item itemvalue="TestNG.LoginModuleTests.loginWithNoData" />
         <item itemvalue="TestNG.LoginModuleTests.loginWithInvalidPassword" />
         <item itemvalue="TestNG.LoginModuleTests.loginWithInvalidEmail" />
         <item itemvalue="TestNG.LoginModuleTests.loginWithValidCreds" />
-        <item itemvalue="TestNG.LoginModuleTests.resetPassword" />
       </list>
     </recent_temporary>
   </component>
