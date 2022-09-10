@@ -1,15 +1,24 @@
 package ua.ukrposhta.Pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 
 import java.util.ArrayList;
 
+import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class PersonalAccountPage {
 
     private final String email = "testemail1@gmail.com";// The different user with non-changeable credentials
     private final String password = "Qwerty123";
+
+    public String getContactCenterHeaderExpected() {
+        return contactCenterHeaderExpected;
+    }
+
+    private final String contactCenterHeaderExpected = "Контакт-центр";
 
     private final SelenideElement sideBarUserProfile = $x("//*[@id=\"accordion\"]/li[1]/a");
     private final SelenideElement sideBarLoyaltyProgram = $x("//*[@id=\"accordion\"]/li[2]/div[1]/a[1]");
@@ -19,30 +28,35 @@ public class PersonalAccountPage {
     private final SelenideElement sideBarLetter = $x("//*[@id=\"accordion\"]/li[6]/div[1]/a[1]");
     private final SelenideElement sideBarInternational = $x("//*[@id=\"accordion\"]/li[7]/div[1]/a[1]");
     private final SelenideElement sidebarDeliveryCall = $x("//*[@id=\"accordion\"]/li[8]/a");
-
-    ArrayList<String> ActualValues = new ArrayList<String>();
-    ArrayList<String> ExpectedValues = new ArrayList<String>();
-
-    private final SelenideElement poshtaExpressExpandButton = $x("//*[@id=\"accordion\"]/li[3]/div[1]/a[2]");
-
-
-
-    public ArrayList<String> fillActualArray () {
+    private final SelenideElement expressPoshtaExpand = $x("//a[@href=\"#expressLink\"]");
+    private final SelenideElement contactCenterHeader = $x("//div[@class=\"container\"]/h3");
+    private final SelenideElement ukrPoshtaStandartLink = $x("//*[@id=\"accordion\"]/li[4]/div[1]/a[1]");
+    private final ElementsCollection actualValues = $$("li.panel.sidebar-item");
+    private final ElementsCollection expressListValues = $$(By.xpath("//*[@id=\"expressLink\"]/ul/li"));
+    ArrayList<String> expressListText = new ArrayList<>();
+    ArrayList<String> actualValuesText = new ArrayList<String>();
 
 
-        ActualValues.add(sideBarUserProfile.getText());
-        ActualValues.add(sideBarLoyaltyProgram.getText());
-        ActualValues.add(sideBarPoshtaExpress.getText());
-        ActualValues.add(sideBarPoshtaStandart.getText());
-        ActualValues.add(sideBarPoshtaDocs.getText());
-        ActualValues.add(sideBarLetter.getText());
-        ActualValues.add(sideBarInternational.getText());
-        ActualValues.add(sidebarDeliveryCall.getText());
-        return ActualValues;
+    /**
+     * List of expected values
+     */
+    public ArrayList<String> expressListExpected() {
+        ArrayList<String> values = new ArrayList<>();
+
+        values.add("Інструкція");
+        values.add("Питання-відповіді");
+        values.add("Тарифи");
+        values.add("Терміни");
+        values.add("Місця приймання");
+        values.add("Упакування");
+        return values;
     }
 
-    public ArrayList<String> fillExpectedArray () {
-
+    /**
+     * List of expected values
+     */
+    public ArrayList<String> sideBarListExpected () {
+        ArrayList<String> ExpectedValues = new ArrayList<String>();
         ExpectedValues.add("Профіль користувача");
         ExpectedValues.add("Програма лояльності");
         ExpectedValues.add("Укрпошта Експрес");
@@ -67,18 +81,44 @@ public class PersonalAccountPage {
         return password;
     }
 
-    public ArrayList<String> getActualValues() {
-        return ActualValues;
-    }
 
-    public ArrayList<String> getExpectedValues() {
-        return ExpectedValues;
-    }
-
+    /**
+     * Click on the Expand button
+     */
     public void clickOnTheExpandButton () {
-        poshtaExpressExpandButton.click();
+        expressPoshtaExpand.click();
     }
 
+    /**
+     * Convert elements collection to String list
+     */
+    public ArrayList<String> expressList () {
+        for (SelenideElement expressListValue : expressListValues) {
+            String value = expressListValue.getText();
+            expressListText.add(value);
+        }
+        return expressListText;
+    }
 
+    /**
+     * Convert elements collection to String list
+     */
+    public ArrayList<String> sideBarList () {
+        for (SelenideElement actualValue : actualValues) {
+            String value = actualValue.getText();
+            actualValuesText.add(value);
+        } return actualValuesText;
+    }
 
+    public void clickOnTheInstructionLink () {
+        expressListValues.get(1).click();
+    }
+
+    public String getContactCenterHeader () {
+        return contactCenterHeader.getText();
+    }
+
+    public void clickOnTheUkrPoshtaStandartLink() {
+        ukrPoshtaStandartLink.click();
+    }
 }

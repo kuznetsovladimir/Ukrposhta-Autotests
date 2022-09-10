@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/LogInPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ArraysComparison.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PersonalAccountPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonalAccountPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/ArraysComparison.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/PersonalAccountPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/PersonalAccountPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HomePageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HomePageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PersonalAccountPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PersonalAccountPageTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,60 +66,59 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="TestNG.PersonalAccountPageTests.sidebarNavigation">
-    <configuration name="LoginModuleTests.loginWithInvalidEmail" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginModuleTests" />
-      <option name="METHOD_NAME" value="loginWithInvalidEmail" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginModuleTests.loginWithInvalidPassword" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginModuleTests" />
-      <option name="METHOD_NAME" value="loginWithInvalidPassword" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginModuleTests.loginWithNoData" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginModuleTests" />
-      <option name="METHOD_NAME" value="loginWithNoData" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginModuleTests.loginWithValidCreds" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginModuleTests" />
-      <option name="METHOD_NAME" value="loginWithValidCreds" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonalAccountPageTests.sidebarNavigation" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.StandartCreateTests.checkDeliveryMethodsValues">
+    <configuration name="PersonalAccountPageTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PersonalAccountPageTests" />
-      <option name="METHOD_NAME" value="sidebarNavigation" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StandartCreateTests.checkDeliveryMethodsValues" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
+      <option name="METHOD_NAME" value="checkDeliveryMethodsValues" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StandartCreateTests.createNewDespatch" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
+      <option name="METHOD_NAME" value="createNewDespatch" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StandartCreateTests.deleteDespatch" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
+      <option name="METHOD_NAME" value="deleteDespatch" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StandartCreateTests.modifyDespatch" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
+      <option name="METHOD_NAME" value="modifyDespatch" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -123,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.PersonalAccountPageTests.sidebarNavigation" />
-        <item itemvalue="TestNG.LoginModuleTests.loginWithNoData" />
-        <item itemvalue="TestNG.LoginModuleTests.loginWithInvalidPassword" />
-        <item itemvalue="TestNG.LoginModuleTests.loginWithInvalidEmail" />
-        <item itemvalue="TestNG.LoginModuleTests.loginWithValidCreds" />
+        <item itemvalue="TestNG.StandartCreateTests.checkDeliveryMethodsValues" />
+        <item itemvalue="TestNG.StandartCreateTests.deleteDespatch" />
+        <item itemvalue="TestNG.StandartCreateTests.createNewDespatch" />
+        <item itemvalue="TestNG.StandartCreateTests.modifyDespatch" />
+        <item itemvalue="TestNG.PersonalAccountPageTests" />
       </list>
     </recent_temporary>
   </component>

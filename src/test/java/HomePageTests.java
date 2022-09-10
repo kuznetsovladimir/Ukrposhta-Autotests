@@ -26,6 +26,7 @@ public class HomePageTests {
         homePage.openLanguageSelectionDropdown();
         Thread.sleep(3000);
         Assert.assertTrue(homePage.languageDropdownValuesCompare("RU", "EN"));
+
         homePage.selectRuLanguage();
         Thread.sleep(3000);
         Assert.assertTrue(homePage.ruLanguageAppliedCheck());

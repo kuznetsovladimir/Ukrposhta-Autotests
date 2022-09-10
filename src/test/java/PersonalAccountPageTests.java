@@ -1,5 +1,5 @@
-import Utils.ArraysComparison;
 import Utils.WebDriverFactory;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -37,10 +37,15 @@ public class PersonalAccountPageTests {
 
     @Test
     public void sidebarNavigation () {
-        ArraysComparison compareArrays = new ArraysComparison();
         PersonalAccountPage personalAccountPage = new PersonalAccountPage();
 
-        Assert.assertTrue(compareArrays.compareTwoArrays(personalAccountPage.fillActualArray(), personalAccountPage.fillExpectedArray()));
+        Assert.assertEquals(personalAccountPage.sideBarList(), personalAccountPage.sideBarListExpected());
+        personalAccountPage.clickOnTheExpandButton();
+        Selenide.sleep(3000);
+        Assert.assertEquals(personalAccountPage.expressList(), personalAccountPage.expressListExpected());
+        personalAccountPage.clickOnTheInstructionLink();
+        Selenide.sleep(3000);
+        Assert.assertEquals(personalAccountPage.getContactCenterHeader(), personalAccountPage.getContactCenterHeaderExpected());
 
     }
 
