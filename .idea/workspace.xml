@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20220320.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FindPostalIndexTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ArraysComparison.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UkrPoshta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/UkrPoshta.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PersonalAccountPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonalAccountPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utils/ArraysComparison.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/PersonalAccountPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/PersonalAccountPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/HomePageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HomePageTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PersonalAccountPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PersonalAccountPageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/UkrPoshtaStandartPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/UkrPoshtaStandartPage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,16 +68,29 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../QA courses/array" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../petstore" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="TestNG.StandartCreateTests.checkDeliveryMethodsValues">
-    <configuration name="PersonalAccountPageTests" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Page404Tests.navigateToHomePage">
+    <configuration name="CreateContactPerson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Utils.CreateContactPerson" />
+      <module name="UkrPoshta" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PersonalAccountPageTests" />
+      <option name="MAIN_CLASS_NAME" value="ApiTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -78,11 +98,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandartCreateTests.checkDeliveryMethodsValues" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ApiTest.createContactPerson" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
-      <option name="METHOD_NAME" value="checkDeliveryMethodsValues" />
+      <option name="MAIN_CLASS_NAME" value="ApiTest" />
+      <option name="METHOD_NAME" value="createContactPerson" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -90,11 +110,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandartCreateTests.createNewDespatch" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Page404Tests.check404Page" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
-      <option name="METHOD_NAME" value="createNewDespatch" />
+      <option name="MAIN_CLASS_NAME" value="Page404Tests" />
+      <option name="METHOD_NAME" value="check404Page" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -102,23 +122,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandartCreateTests.deleteDespatch" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Page404Tests.navigateToHomePage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
-      <option name="METHOD_NAME" value="deleteDespatch" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StandartCreateTests.modifyDespatch" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
-      <option name="METHOD_NAME" value="modifyDespatch" />
+      <option name="MAIN_CLASS_NAME" value="Page404Tests" />
+      <option name="METHOD_NAME" value="navigateToHomePage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -128,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.StandartCreateTests.checkDeliveryMethodsValues" />
-        <item itemvalue="TestNG.StandartCreateTests.deleteDespatch" />
-        <item itemvalue="TestNG.StandartCreateTests.createNewDespatch" />
-        <item itemvalue="TestNG.StandartCreateTests.modifyDespatch" />
-        <item itemvalue="TestNG.PersonalAccountPageTests" />
+        <item itemvalue="TestNG.Page404Tests.navigateToHomePage" />
+        <item itemvalue="TestNG.Page404Tests.check404Page" />
+        <item itemvalue="TestNG.ApiTest" />
+        <item itemvalue="TestNG.ApiTest.createContactPerson" />
+        <item itemvalue="Application.CreateContactPerson" />
       </list>
     </recent_temporary>
   </component>

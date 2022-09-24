@@ -3,6 +3,7 @@ package ua.ukrposhta.Pages;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class HomePage {
@@ -23,6 +24,8 @@ public class HomePage {
     private final SelenideElement IndexPageHeader = $x("/html/body/app-root/div/div/div/div/h3");
     private  final SelenideElement searchIndexInput = $x("//*[@id=\"main\"]/div/div[6]/div/div/div/div/form/div/div[1]/input");
     private final SelenideElement registrationButton = $x("/html/body/header/div[2]/div[1]/div/div[2]/a[2]/span");
+    private final SelenideElement bottomHeader = $("#bottom-header");
+
 
     /**
      * Click on the language selection button
@@ -154,5 +157,11 @@ public class HomePage {
     public void clickOnTheRegistrationButton () {
         registrationButton.click();
     }
+
+    public SelenideElement getBottomHeader () {
+        return bottomHeader;
+    }
+
+
 }
 

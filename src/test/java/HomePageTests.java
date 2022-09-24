@@ -83,4 +83,6 @@ public class HomePageTests {
         Thread.sleep(2000);
         Assert.assertTrue(homepage.indexSearchPageOpened());
     }
+
+
 }
