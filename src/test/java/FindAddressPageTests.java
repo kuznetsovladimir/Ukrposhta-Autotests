@@ -16,12 +16,13 @@ public class FindAddressPageTests {
     @BeforeMethod
     public void setUp () {
         WebDriverFactory driver = new WebDriverFactory();
-        driver.GetDriver("CHROME");
+        driver.GetDriver("FIREFOX");
 
 
         open("https://ukrposhta.ua/");
         SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
-        acceptCookiesButton.click();
+        if(acceptCookiesButton.isDisplayed())
+        {acceptCookiesButton.click();}
     }
 
     @Test

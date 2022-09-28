@@ -1,11 +1,9 @@
 import Utils.WebDriverFactory;
-import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.ukrposhta.Pages.HomePage;
 
-import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
 public class HomePageTests {
@@ -13,15 +11,15 @@ public class HomePageTests {
     @BeforeMethod
     public void setUp() {
         WebDriverFactory driver = new WebDriverFactory();
-        driver.GetDriver("");
+        driver.GetDriver("FIREFOX");
         open("https://ukrposhta.ua/");
-        SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
-        acceptCookiesButton.click();
+
     }
 
-    @Test
+    @Test (priority = 1)
     public void changeLanguageToRu () throws InterruptedException {
         HomePage homePage = new HomePage();
+
         Thread.sleep(3000);
         homePage.openLanguageSelectionDropdown();
         Thread.sleep(3000);
@@ -36,7 +34,7 @@ public class HomePageTests {
         Assert.assertTrue(homePage.languageDropdownValuesCompare("UA", "EN"));
     }
 
-    @Test
+    @Test (priority = 2)
     public void changeLanguageToEn () throws InterruptedException {
         HomePage homePage = new HomePage();
         Thread.sleep(3000);
@@ -52,7 +50,7 @@ public class HomePageTests {
         Assert.assertTrue(homePage.languageDropdownValuesCompare("UA", "RU"));
     }
 
-    @Test
+    @Test (priority = 3)
     public void checkSliderItemContent () throws InterruptedException {
         HomePage homePage = new HomePage();
         homePage.clickOnTheFirstSlickButton();
@@ -64,9 +62,15 @@ public class HomePageTests {
         homePage.clickOnTheThirdSlickButton();
         Thread.sleep(2000);
         Assert.assertTrue(homePage.thirdSliderContentHeader());
+        homePage.clickOnTHeFourthSlickButton();
+        Thread.sleep(2000);
+        Assert.assertTrue(homePage.fourthSliderContentHeader());
+        homePage.clickOnTHeFifthSlickButton();
+        Thread.sleep(2000);
+        Assert.assertTrue(homePage.fifthSliderContentHeader());
     }
 
-    @Test
+    @Test (priority = 4)
     public void openIndexSearchPage () throws InterruptedException {
         HomePage homePage = new HomePage();
         homePage.clickOnTheIndexSearchButton();
@@ -74,7 +78,7 @@ public class HomePageTests {
         Assert.assertTrue(homePage.indexSearchPageOpened());
     }
 
-    @Test
+    @Test (priority = 5)
     public void openIndexSearchPageFromInput () throws InterruptedException {
         HomePage homepage = new HomePage();
         homepage.scrollToIndexSearchInput();

@@ -19,23 +19,21 @@ public class PersonalAccountPageTests {
         LogInPage logInPage = new LogInPage();
         PersonalAccountPage personalAccountPage = new PersonalAccountPage();
         WebDriverFactory driver = new WebDriverFactory();
-        driver.GetDriver("CHROME");
+        driver.GetDriver("FIREFOX");
 
         open("https://ukrposhta.ua/");
         SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
-        acceptCookiesButton.click();
-
+        if(acceptCookiesButton.isDisplayed())
+        {acceptCookiesButton.click();}
         homePage.clickOnTheRegistrationButton();
         Thread.sleep(3000);
         logInPage.clickOnTheLogInButton();
-        logInPage.fillTheEmailField(personalAccountPage.getEmail());
-        logInPage.fillPasswordField(personalAccountPage.getPassword());
-        logInPage.clickOnTheEnterButton();
+
         Thread.sleep(3000);
 
     }
 
-    @Test
+    @Test (priority = 1)
     public void sidebarNavigation () {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage();
 

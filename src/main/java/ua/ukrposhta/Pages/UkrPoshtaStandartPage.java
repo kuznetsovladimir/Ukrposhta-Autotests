@@ -14,7 +14,7 @@ public class UkrPoshtaStandartPage {
     private final String DELETE_MESSAGE = "Ви дійсно бажаєте видалити відправлення?";
     private final String NO_DESPATCHES_MESSAGE = "Увага! Відправлення відсутні. Для початку роботи натисніть кнопку Створити відправлення.";
 
-    private final SelenideElement standartCreateBtn = $("#standardCreate");
+    private final SelenideElement standartCreateBtn = $x("//button[@data-ng-click=\"createShipment()\"]");
 
     private final ElementsCollection receiverInputFields =
             $$(By.xpath("//input[@id=\"last-name\" or @id=\"first-name\" or @id=\"patronymic\" or @id=\"phone\"]"));

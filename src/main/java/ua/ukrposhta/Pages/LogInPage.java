@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class LogInPage {
     private final SelenideElement personalAccountHeader = $x("//*[@id=\"main-wrap\"]/div[2]/div/div[1]/div/div[1]");
-    private final SelenideElement logInButton = $x("//*[@id=\"registration-form\"]/form/div[24]/div[2]/div");
+    private final SelenideElement logInButton = $x("//a[@rel=\"login-form\"]");
     private final SelenideElement authorizationHeader = $x("//*[@id=\"login-form\"]/div[1]/h3");
     private final SelenideElement forgotPasswordButton = $x("//*[@id=\"login-form\"]/form/div[4]/div/div/a[2]");
     private final SelenideElement forgotPasswordSectionHeader = $x("//*[@id=\"login-form\"]/div[1]/h3");
@@ -25,6 +25,9 @@ public class LogInPage {
 
 
 
+    public SelenideElement getStopSessionButton () {
+        return stopSessionButton;
+    }
     /**
      * Verify Log in page header
      */

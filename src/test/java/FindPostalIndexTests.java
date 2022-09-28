@@ -1,13 +1,11 @@
 import Utils.WebDriverFactory;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.ukrposhta.Pages.FindPostalIndexPage;
 import ua.ukrposhta.Pages.HomePage;
 
-import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
 public class FindPostalIndexTests {
@@ -15,12 +13,11 @@ public class FindPostalIndexTests {
     @BeforeMethod
     public void setUp () {
         WebDriverFactory driver = new WebDriverFactory();
-        driver.GetDriver("CHROME");
-
+        driver.GetDriver("FIREFOX");
 
         open("https://ukrposhta.ua/");
-        SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
-        acceptCookiesButton.click();
+
+
     }
 
     @Test

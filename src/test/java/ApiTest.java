@@ -15,7 +15,7 @@ public class ApiTest {
 
 
 
-    @Test
+    @Test (priority = 1)
     public void createContactPerson () throws IOException {
         ApiConstants constants = new ApiConstants();
 
@@ -31,7 +31,7 @@ public class ApiTest {
 
     }
 
-    @Test
+    @Test (priority = 2)
     public void updateContactPerson () throws IOException {
         ApiConstants constants = new ApiConstants();
 
@@ -49,7 +49,7 @@ public class ApiTest {
 
     }
 
-    @Test
+    @Test (priority = 3)
     public void deleteContactPerson () throws IOException {
         ApiConstants constants = new ApiConstants();
 

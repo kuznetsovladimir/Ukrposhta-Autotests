@@ -16,30 +16,44 @@ public class StandartCreateTests {
     public int sleep = 3000;
     @BeforeMethod
     public void setUp () throws InterruptedException {
-        HomePage homePage = new HomePage();
-        LogInPage logInPage = new LogInPage();
-        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
+
+
+
         WebDriverFactory driver = new WebDriverFactory();
-        driver.GetDriver("CHROME");
+        driver.GetDriver("FIREFOX");
+
 
         open("https://ukrposhta.ua/");
-        SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
-       acceptCookiesButton.click();
 
+
+    }
+
+    @Test (priority = 1)
+
+    public void createNewDespatch () {
+        HomePage homePage  = new HomePage();
+        LogInPage logInPage = new LogInPage();
+
+
+        UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
+
+        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
         homePage.clickOnTheRegistrationButton();
+        SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
+        if(acceptCookiesButton.isDisplayed())
+        {acceptCookiesButton.click();}
         Selenide.sleep(sleep);
+
+
         logInPage.clickOnTheLogInButton();
+        Selenide.sleep(sleep);
         logInPage.fillTheEmailField(personalAccountPage.getEmail());
         logInPage.fillPasswordField(personalAccountPage.getPassword());
         logInPage.clickOnTheEnterButton();
         Selenide.sleep(sleep);
+
+
         personalAccountPage.clickOnTheUkrPoshtaStandartLink();
-    }
-
-    @Test
-    public void createNewDespatch () {
-        UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
-
         standartPage.clickOnTheStandartCreateBtn();
         Selenide.sleep(sleep);
         standartPage.fillReceiverSection();
@@ -57,9 +71,10 @@ public class StandartCreateTests {
         Selenide.sleep(4000);
     }
 
-    @Test
+    @Test (priority = 2)
     public void modifyDespatch () {
         UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
+        open("https://ok.ukrposhta.ua/ua/lk/standart");
 
         standartPage.clickOnTheMoreInfoButton();
         Selenide.sleep(sleep);
@@ -75,9 +90,10 @@ public class StandartCreateTests {
         Assert.assertTrue(standartPage.verifyNewNumber());
     }
 
-    @Test
+    @Test (priority = 3)
     public void deleteDespatch () {
         UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
+        open("https://ok.ukrposhta.ua/ua/lk/standart");
 
         standartPage.clickOnTheMoreInfoButton();
         Selenide.sleep(sleep);
@@ -92,9 +108,10 @@ public class StandartCreateTests {
         Assert.assertTrue(standartPage.verifyDespatchDeleted());
     }
 
-    @Test
+    @Test (priority = 4)
     public void checkDeliveryMethodsValues () {
         UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
+        open("https://ok.ukrposhta.ua/ua/lk/standart");
 
         standartPage.clickOnTheStandartCreateBtn();
         Selenide.sleep(sleep);

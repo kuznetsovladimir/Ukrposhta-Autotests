@@ -14,12 +14,12 @@ public class Page404Tests {
     @BeforeMethod
     public void setUp () {
         WebDriverFactory driver = new WebDriverFactory();
-        driver.GetDriver("CHROME");
+        driver.GetDriver("FIREFOX");
 
 
     }
 
-    @Test
+    @Test (priority = 1)
     public void check404Page () {
         Page404 page = new Page404();
         open("https://ok.ukrposhta.ua/ua/lk/standartt");
@@ -29,7 +29,7 @@ public class Page404Tests {
         Assert.assertTrue(page.getToTheHomePageBtn().isDisplayed());
     }
 
-    @Test
+    @Test (priority = 2)
     public void navigateToHomePage () {
         Page404 page = new Page404();
         HomePage homePage = new HomePage();

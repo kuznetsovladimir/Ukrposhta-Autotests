@@ -1,0 +1,13 @@
+ua\ukrposhta\Pages\FindAddressPage.class
+Utils\BrowserActions.class
+Utils\WebDriverFactory.class
+Utils\GeneratePassword.class
+Utils\ApiConstants.class
+ua\ukrposhta\Pages\PersonalAccountPage.class
+ua\ukrposhta\Pages\HomePage.class
+ua\ukrposhta\Pages\GmailLoginPage.class
+ua\ukrposhta\Pages\UkrPoshtaStandartPage.class
+ua\ukrposhta\Pages\FindPostalIndexPage.class
+ua\ukrposhta\Pages\Page404.class
+ua\ukrposhta\Pages\LogInPage.class
+Utils\CreateCounterparty.class

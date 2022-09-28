@@ -1,22 +1,19 @@
 import Utils.WebDriverFactory;
-import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.ukrposhta.Pages.HomePage;
 import ua.ukrposhta.Pages.LogInPage;
 
-import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginModuleTests {
     @BeforeMethod
     public void setUp() {
         WebDriverFactory driver = new WebDriverFactory();
-        driver.GetDriver("");
+        driver.GetDriver("FIREFOX");
         open("https://ukrposhta.ua/");
-        SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
-        acceptCookiesButton.click();
+
     }
 
     /*@Test
@@ -47,10 +44,11 @@ public class LoginModuleTests {
         Thread.sleep(5000);
     }*/
 
-    @Test
+    @Test (priority = 1)
     public void loginWithValidCreds () throws InterruptedException {
         HomePage homePage = new HomePage();
         LogInPage logInPage = new LogInPage();
+
 
         homePage.clickOnTheRegistrationButton();
         Thread.sleep(3000);
@@ -61,10 +59,11 @@ public class LoginModuleTests {
         logInPage.clickOnTheEnterButton();
         Thread.sleep(3000);
         Assert.assertTrue(logInPage.verifyLogIn());
+        logInPage.getStopSessionButton().click();
 
     }
 
-    @Test
+    @Test (priority = 2)
     public void loginWithInvalidEmail () throws InterruptedException {
         HomePage homePage = new HomePage();
         LogInPage logInPage = new LogInPage();
@@ -82,7 +81,7 @@ public class LoginModuleTests {
 
     }
 
-    @Test
+    @Test (priority = 3)
     public void loginWithInvalidPassword () throws InterruptedException {
         HomePage homePage = new HomePage();
         LogInPage logInPage = new LogInPage();
@@ -100,7 +99,7 @@ public class LoginModuleTests {
 
     }
 
-    @Test
+    @Test (priority = 4)
     public void loginWithNoData () throws InterruptedException {
         HomePage homePage = new HomePage();
         LogInPage logInPage = new LogInPage();
