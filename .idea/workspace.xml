@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_qameta_allure_allure_java_commons_2_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_qameta_allure_allure_model_2_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_qameta_allure_allure_test_filter_2_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_qameta_allure_allure_testng_2_19_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UkrPoshta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/UkrPoshta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/LogInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/LogInPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/UkrPoshtaStandartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/UkrPoshtaStandartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ApiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FindAddressPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FindAddressPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FindPostalIndexTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FindPostalIndexTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Page404Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Page404Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PersonalAccountPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonalAccountPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StandartCreateTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StandartCreateTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/HomePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/LogInPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/LogInPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ApiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ApiTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/FindAddressPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FindAddressPageTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/FindPostalIndexTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FindPostalIndexTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/HomePageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HomePageTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/LoginModuleTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/LoginModuleTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Page404Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Page404Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PersonalAccountPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PersonalAccountPageTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/StandartCreateTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/StandartCreateTests.class" afterDir="false" />
-    </list>
+    <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
