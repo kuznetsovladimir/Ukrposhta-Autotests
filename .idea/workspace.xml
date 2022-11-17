@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="" />
+    <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -55,6 +58,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -62,35 +66,24 @@
       <command value="mvn clean test" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.StandartCreateTests">
-    <configuration name="FindPostalIndexTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FindPostalIndexTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HomePageTests.checkSliderItemContent" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="METHOD_NAME" value="checkSliderItemContent" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.StandartCreateTests.createNewDespatch">
     <configuration name="PersonalAccountPageTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PersonalAccountPageTests" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonalAccountPageTests.sidebarNavigation" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PersonalAccountPageTests" />
+      <option name="METHOD_NAME" value="sidebarNavigation" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -120,13 +113,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StandartCreateTests.modifyDespatch" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
+      <option name="METHOD_NAME" value="modifyDespatch" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.StandartCreateTests" />
         <item itemvalue="TestNG.StandartCreateTests.createNewDespatch" />
-        <item itemvalue="TestNG.HomePageTests.checkSliderItemContent" />
+        <item itemvalue="TestNG.StandartCreateTests" />
+        <item itemvalue="TestNG.StandartCreateTests.modifyDespatch" />
+        <item itemvalue="TestNG.PersonalAccountPageTests.sidebarNavigation" />
         <item itemvalue="TestNG.PersonalAccountPageTests" />
-        <item itemvalue="TestNG.FindPostalIndexTests" />
       </list>
     </recent_temporary>
   </component>
