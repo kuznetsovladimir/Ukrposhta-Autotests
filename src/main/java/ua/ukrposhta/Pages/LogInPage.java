@@ -28,6 +28,18 @@ public class LogInPage {
     public SelenideElement getStopSessionButton () {
         return stopSessionButton;
     }
+    public  SelenideElement getPersonalAccountHeader() {
+        return personalAccountHeader;
+    }
+    public SelenideElement getErrorMessageMail () {
+        return errorMessageMail;
+    }
+    public SelenideElement getErrorMessagePass () {
+        return errorMessagePass;
+    }
+    public SelenideElement getAuthorizationHeader () {
+        return authorizationHeader;
+    }
     /**
      * Verify Log in page header
      */

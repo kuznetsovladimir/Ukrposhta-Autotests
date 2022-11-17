@@ -11,15 +11,6 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class PersonalAccountPage {
 
-    private final String email = "testemail1@gmail.com";// The different user with non-changeable credentials
-    private final String password = "Qwerty123";
-
-    public String getContactCenterHeaderExpected() {
-        return contactCenterHeaderExpected;
-    }
-
-    private final String contactCenterHeaderExpected = "Контакт-центр";
-
     private final SelenideElement sideBarUserProfile = $x("//*[@id=\"accordion\"]/li[1]/a");
     private final SelenideElement sideBarLoyaltyProgram = $x("//*[@id=\"accordion\"]/li[2]/div[1]/a[1]");
     private final SelenideElement sideBarPoshtaExpress = $x("//*[@id=\"accordion\"]/li[3]/div[1]/a[1]");
@@ -31,6 +22,7 @@ public class PersonalAccountPage {
     private final SelenideElement expressPoshtaExpand = $x("//a[@href=\"#expressLink\"]");
     private final SelenideElement contactCenterHeader = $x("//div[@class=\"container\"]/h3");
     private final SelenideElement ukrPoshtaStandartLink = $x("//*[@id=\"accordion\"]/li[4]/div[1]/a[1]");
+    private final SelenideElement expandedSection = $x("//div[@class=\"accordion-inner collapse in\"]");
     private final ElementsCollection actualValues = $$("li.panel.sidebar-item");
     private final ElementsCollection expressListValues = $$(By.xpath("//*[@id=\"expressLink\"]/ul/li"));
     ArrayList<String> expressListText = new ArrayList<>();
@@ -67,20 +59,6 @@ public class PersonalAccountPage {
         ExpectedValues.add("Виклик кур’єра");
         return ExpectedValues;
     }
-    /**
-     * Get Email
-     */
-    public String getEmail () {
-        return email;
-    }
-
-    /**
-     * Get Password
-     */
-    public String getPassword () {
-        return password;
-    }
-
 
     /**
      * Click on the Expand button
@@ -114,11 +92,17 @@ public class PersonalAccountPage {
         expressListValues.get(1).click();
     }
 
-    public String getContactCenterHeader () {
+    public String getContactCenterHeaderText () {
         return contactCenterHeader.getText();
+    }
+    public SelenideElement getContactCenterHeader () {
+        return contactCenterHeader;
     }
 
     public void clickOnTheUkrPoshtaStandartLink() {
         ukrPoshtaStandartLink.click();
+    }
+    public SelenideElement getExpandedSection () {
+        return expandedSection;
     }
 }

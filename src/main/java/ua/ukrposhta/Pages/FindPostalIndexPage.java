@@ -1,13 +1,14 @@
 package ua.ukrposhta.Pages;
 
 import com.codeborne.selenide.SelenideElement;
+import utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class FindPostalIndexPage {
+public class FindPostalIndexPage extends TestData {
 
-    private final String CITY_NAME = "Дніпро";
-    private final String INDEX = "49086";
+
+
 
     private final SelenideElement cityDropdownField = $x("//div[@class=\"btn-group dropdown-group\"]/form-city-input/input");
     private final SelenideElement cityDropdownList = $x("//ul[@class=\"cities-dropdown-menu show ng-star-inserted\"]");
@@ -21,29 +22,20 @@ public class FindPostalIndexPage {
     private final SelenideElement indexResponseBlockHeader = $x("//p[@class=\"postOfficeIndex ng-star-inserted\"]");
     private final SelenideElement searchAddressByIndexNavLink = $x("//a[@class=\"link-to-adress-page link-grey\"]");
 
-
-    public String getCITY_NAME () {
-        return CITY_NAME;
-    }
-
-    public String getINDEX () {
-        return INDEX;
-    }
-
     public SelenideElement getCityDropdownList () {
         return cityDropdownList;
     }
-
     public SelenideElement getStreetDropdownList () {
         return streetDropdownList;
     }
-
     public SelenideElement getHouseDropdownList () {
         return houseDropdownList;
     }
-
     public SelenideElement getIndexResponseBlock () {
         return indexResponseBlock;
+    }
+    public SelenideElement getSubmitButton() {
+        return submitButton;
     }
 
     public String indexResponseBlockHeaderText () {

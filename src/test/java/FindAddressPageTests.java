@@ -1,5 +1,3 @@
-import Utils.WebDriverFactory;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -7,17 +5,18 @@ import org.testng.annotations.Test;
 import ua.ukrposhta.Pages.FindAddressPage;
 import ua.ukrposhta.Pages.FindPostalIndexPage;
 import ua.ukrposhta.Pages.HomePage;
+import utils.TestData;
+import utils.Waiter;
+import utils.WebDriverFactory;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
-public class FindAddressPageTests {
-    int sleep = 3000;
+public class FindAddressPageTests extends TestData {
     @BeforeMethod
     public void setUp () {
         WebDriverFactory driver = new WebDriverFactory();
         driver.GetDriver("FIREFOX");
-
 
         open("https://ukrposhta.ua/");
         SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
@@ -30,19 +29,18 @@ public class FindAddressPageTests {
         HomePage homePage = new HomePage();
         FindAddressPage findAddress = new FindAddressPage();
         FindPostalIndexPage findIndex = new FindPostalIndexPage();
+        Waiter waiter = new Waiter();
 
         homePage.clickOnTheIndexSearchButton();
-        Selenide.sleep(sleep);
-        Assert.assertTrue(homePage.indexSearchPageOpened());
+        waiter.waitForVisibility(homePage.getIndexPageHeader());
         findIndex.clickOnSearchAddressByIndexNavLink();
-        Selenide.sleep(sleep);
-        Assert.assertEquals(findAddress.pageHeaderText(), findAddress.getHEADER());
+        waiter.waitForVisibility(findAddress.getPageHeader());
+        Assert.assertEquals(findAddress.getPageHeaderText(), FIND_ADDRESS_PAGE_HEADER);
         findAddress.fillInputField();
         findAddress.clickOnSearchButton();
-        Selenide.sleep(2000);
-        Assert.assertTrue(findAddress.getResponseBlock().isDisplayed());
-        Assert.assertEquals(findAddress.addressText(), findAddress.getADDRESS());
-        Selenide.sleep(sleep);
+        waiter.waitForVisibility(findAddress.getResponseBlock());
+        Assert.assertEquals(findAddress.addressText(), ADDRESS);
+
 
 
     }

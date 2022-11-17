@@ -1,41 +1,30 @@
 package ua.ukrposhta.Pages;
 
 import com.codeborne.selenide.SelenideElement;
+import utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class FindAddressPage {
 
-    private final String INDEX = "49086";
-    private final String ADDRESS = "вул. Підгірна, 19.";
-    private final String HEADER = "Знайти адресу";
+public class FindAddressPage extends TestData {
 
-    private final SelenideElement pageHeader = $x("//div[@id=\"main\"]/div/div/div/h3");
+    private final SelenideElement pageHeader = $x("//div[@class=\"container\"]/h3");
     private final SelenideElement searchInputField = $("#postIndex");
     private final SelenideElement searchButton = $x("//button[@class=\"submitButton col-md-12 col-xs-12\"]");
     private final SelenideElement responseBlock = $x("//div[@class=\"adressesResponse ng-star-inserted\"]");
     private final SelenideElement address = $x("//div[@class=\"adressesResponse ng-star-inserted\"]/p[4]");
 
 
-    public String getINDEX () {
-        return INDEX;
+    public SelenideElement getPageHeader () {
+        return pageHeader;
     }
-
-    public String getADDRESS () {
-        return ADDRESS;
-    }
-
-    public String getHEADER () {
-        return HEADER;
-    }
-
-    public String pageHeaderText () {
+    public String getPageHeaderText () {
         return pageHeader.getText();
     }
 
     public void fillInputField () {
-        searchInputField.sendKeys(INDEX);
+        searchInputField.sendKeys(POSTAL_INDEX);
     }
 
     public void clickOnSearchButton () {
@@ -49,6 +38,8 @@ public class FindAddressPage {
     public String addressText () {
         return address.getText();
     }
+
+
 
 
 }

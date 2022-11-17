@@ -4,7 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="" />
+    <list default="true" id="3055c6e2-d981-43e7-abe3-e751c618ddd4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ApiConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ApiConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/BrowserActions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/CreateCounterparty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/CreateCounterparty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/GeneratePassword.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/WebDriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/FindAddressPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/FindAddressPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/FindPostalIndexPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/FindPostalIndexPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/GmailLoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/LogInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/LogInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/Page404.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/Page404.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/PersonalAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/UkrPoshtaStandartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/ukrposhta/Pages/UkrPoshtaStandartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/chromedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FindAddressPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FindAddressPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FindPostalIndexTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FindPostalIndexTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginModuleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Page404Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Page404Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PersonalAccountPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonalAccountPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StandartCreateTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StandartCreateTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/ApiConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/ApiConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/BrowserActions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/CreateCounterparty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/CreateCounterparty.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/GeneratePassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/WebDriverFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/WebDriverFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chromedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/FindAddressPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/FindAddressPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/FindPostalIndexPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/FindPostalIndexPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/GmailLoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/ukrposhta/Pages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ApiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ApiTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/FindAddressPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FindAddressPageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/FindPostalIndexTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FindPostalIndexTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/HomePageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HomePageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/LoginModuleTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/LoginModuleTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Page404Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Page404Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PersonalAccountPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PersonalAccountPageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/StandartCreateTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/StandartCreateTests.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +58,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -55,6 +98,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -62,35 +106,24 @@
       <command value="mvn clean test" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.StandartCreateTests">
-    <configuration name="FindPostalIndexTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FindPostalIndexTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HomePageTests.checkSliderItemContent" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UkrPoshta" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="METHOD_NAME" value="checkSliderItemContent" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.StandartCreateTests.createNewDespatch">
     <configuration name="PersonalAccountPageTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UkrPoshta" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PersonalAccountPageTests" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonalAccountPageTests.sidebarNavigation" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PersonalAccountPageTests" />
+      <option name="METHOD_NAME" value="sidebarNavigation" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -120,13 +153,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StandartCreateTests.modifyDespatch" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UkrPoshta" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StandartCreateTests" />
+      <option name="METHOD_NAME" value="modifyDespatch" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.StandartCreateTests" />
         <item itemvalue="TestNG.StandartCreateTests.createNewDespatch" />
-        <item itemvalue="TestNG.HomePageTests.checkSliderItemContent" />
+        <item itemvalue="TestNG.StandartCreateTests" />
+        <item itemvalue="TestNG.StandartCreateTests.modifyDespatch" />
+        <item itemvalue="TestNG.PersonalAccountPageTests.sidebarNavigation" />
         <item itemvalue="TestNG.PersonalAccountPageTests" />
-        <item itemvalue="TestNG.FindPostalIndexTests" />
       </list>
     </recent_temporary>
   </component>
