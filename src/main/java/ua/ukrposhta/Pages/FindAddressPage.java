@@ -1,54 +1,59 @@
 package ua.ukrposhta.Pages;
 
 import com.codeborne.selenide.SelenideElement;
+import utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class FindAddressPage {
 
-    private final String INDEX = "49086";
-    private final String ADDRESS = "вул. Підгірна, 19.";
-    private final String HEADER = "Знайти адресу";
+public class FindAddressPage extends TestData {
 
-    private final SelenideElement pageHeader = $x("//div[@id=\"main\"]/div/div/div/h3");
+    private final SelenideElement pageHeader = $x("//div[@class=\"container\"]/h3");
     private final SelenideElement searchInputField = $("#postIndex");
-    private final SelenideElement searchButton = $x("//button[@class=\"submitButton col-md-12 col-xs-12\"]");
-    private final SelenideElement responseBlock = $x("//div[@class=\"adressesResponse ng-star-inserted\"]");
-    private final SelenideElement address = $x("//div[@class=\"adressesResponse ng-star-inserted\"]/p[4]");
+    private final SelenideElement searchButton = $x("//button[@type=\"submit\"]");
+    private final SelenideElement responseBlock = $x("//response-address-loader");
+    private final SelenideElement address = $x("//response-address-loader/div[1]/p[4]");
 
-
-    public String getINDEX () {
-        return INDEX;
+    /**
+     * Get page header
+     */
+    public SelenideElement getPageHeader () {
+        return pageHeader;
     }
 
-    public String getADDRESS () {
-        return ADDRESS;
-    }
-
-    public String getHEADER () {
-        return HEADER;
-    }
-
-    public String pageHeaderText () {
+    /**
+     * Get text of the page header
+     */
+    public String getPageHeaderText () {
         return pageHeader.getText();
     }
 
+    /**
+     * Fill the search field with the postal index
+     */
     public void fillInputField () {
-        searchInputField.sendKeys(INDEX);
+        searchInputField.sendKeys(POSTAL_INDEX);
     }
 
+    /**
+     * Click on the "Знайти" button
+     */
     public void clickOnSearchButton () {
-        searchButton.click();;
+        searchButton.click();
     }
 
+    /**
+     * Get response block
+     */
     public SelenideElement getResponseBlock () {
         return responseBlock;
     }
 
-    public String addressText () {
+    /**
+     * Get address from the response block
+     */
+    public String getAddressText() {
         return address.getText();
     }
-
-
 }

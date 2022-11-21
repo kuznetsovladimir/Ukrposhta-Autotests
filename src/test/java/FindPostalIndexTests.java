@@ -1,52 +1,45 @@
-import Utils.WebDriverFactory;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.ukrposhta.Pages.FindPostalIndexPage;
 import ua.ukrposhta.Pages.HomePage;
+import utils.TestData;
+import utils.Waiter;
+import utils.WebDriverFactory;
 
+import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
-public class FindPostalIndexTests {
-    int sleep = 3000;
+public class FindPostalIndexTests extends TestData {
+
     @BeforeMethod
     public void setUp () {
         WebDriverFactory driver = new WebDriverFactory();
         driver.GetDriver("FIREFOX");
-
         open("https://ukrposhta.ua/");
-
-
+        SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
+        if(acceptCookiesButton.isDisplayed())
+        {acceptCookiesButton.click();}
     }
 
     @Test
     public void FindPostalIndex () {
         HomePage homePage = new HomePage();
         FindPostalIndexPage postalPage = new FindPostalIndexPage();
+        Waiter waiter = new Waiter();
 
         homePage.scrollToIndexSearchInput();
         homePage.sendKeysToIndexSearchInput();
-        Selenide.sleep(sleep);
-        Assert.assertTrue(homePage.indexSearchPageOpened());
+        waiter.waitForVisibility(homePage.getIndexPageHeader());
         postalPage.clickOnCityDropdownListFirstOption();
-        Assert.assertFalse(postalPage.getCityDropdownList().isDisplayed());
-        Selenide.sleep(4000);
-        Assert.assertTrue(postalPage.getStreetDropdownList().isDisplayed());
+        waiter.waitForVisibility(postalPage.getStreetDropdownList());
         postalPage.clickOnStreetDropdownListFirstOption();
-        Assert.assertFalse(postalPage.getStreetDropdownList().isDisplayed());
-        Selenide.sleep(sleep);
-        Assert.assertTrue(postalPage.getHouseDropdownList().isDisplayed());
+        waiter.waitForVisibility(postalPage.getHouseDropdownList());
         postalPage.clickOnHouseDropdownListFirstOption();
-        Assert.assertFalse(postalPage.getHouseDropdownList().isDisplayed());
+        waiter.waitForVisibility(postalPage.getSubmitButton());
         postalPage.clickOnSubmitButton();
-        Selenide.sleep(2000);
-        Assert.assertTrue(postalPage.getIndexResponseBlock().isDisplayed());
-        Assert.assertEquals(postalPage.indexResponseBlockHeaderText(), postalPage.getINDEX());
-
-
+        waiter.waitForVisibility(postalPage.getIndexResponseBlock());
+        Assert.assertEquals(postalPage.getIndexResponseBlockHeaderText(), POSTAL_INDEX);
     }
-
-
-
 }

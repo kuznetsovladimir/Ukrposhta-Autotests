@@ -3,32 +3,25 @@ package ua.ukrposhta.Pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import utils.TestData;
 
 import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class UkrPoshtaStandartPage {
-    private final String DELETE_BUTTON_NAME = "Видалити";
-    private final String CANCEL_BUTTON_NAME = "Скасувати";
-    private final String DELETE_MESSAGE = "Ви дійсно бажаєте видалити відправлення?";
-    private final String NO_DESPATCHES_MESSAGE = "Увага! Відправлення відсутні. Для початку роботи натисніть кнопку Створити відправлення.";
+public class UkrPoshtaStandartPage extends TestData {
+
+    private final ElementsCollection receiverInputFields = $$(By.xpath("//input[@id=\"last-name\" or @id=\"first-name\" or @id=\"patronymic\" or @id=\"phone\"]"));
+    private final ElementsCollection receiverAddressDropdownValues = $$(By.xpath("//option[@label=\"Вінницька\" or @label=\"Вінницький\" or @label=\"Агрономічне\"]"));
+    private final ElementsCollection receiverAddressDropdowns = $$(By.xpath("//select[@id=\"region\" or @id=\"district\" or @id=\"city\"]"));
+    private final ElementsCollection deliveryMethodDropdownList = $$(By.xpath("//option[@data-ng-repeat=\"(key,type) in deliveryTypes\"]"));
 
     private final SelenideElement standartCreateBtn = $x("//button[@data-ng-click=\"createShipment()\"]");
-
-    private final ElementsCollection receiverInputFields =
-            $$(By.xpath("//input[@id=\"last-name\" or @id=\"first-name\" or @id=\"patronymic\" or @id=\"phone\"]"));
-    private final ElementsCollection receiverAddressDropdownValues =
-            $$(By.xpath("//option[@label=\"Вінницька\" or @label=\"Вінницький\" or @label=\"Агрономічне\"]"));
-    private final ElementsCollection receiverAddressDropdowns =
-            $$(By.xpath("//select[@id=\"region\" or @id=\"district\" or @id=\"city\"]"));
-    private final ElementsCollection deliveryMethodDropdownList =
-            $$(By.xpath("//option[@data-ng-repeat=\"(key,type) in deliveryTypes\"]"));
     private final SelenideElement streetInput = $x("//input[@id=\"street\"]");
     private final SelenideElement houseInput = $x("//input[@id=\"house\"]");
     private final SelenideElement weightInput = $x("//input[@id=\"weight\"]");
     private final SelenideElement lengthInput = $x("//input[@id=\"length\"]");
-    private final SelenideElement submitButton = $x("//button[@type=\"submit\"]");
+    private final SelenideElement submitButton = $x("//button[@class=\"btn btn-lg form-bottom-btn account-btn-success\"]");
     private final SelenideElement deliveryMethodDropdown = $("#delivery-method");
     private final SelenideElement deliveryMethodOption = $x("//option[@value=\"W2W\"]");
 
@@ -178,5 +171,39 @@ public class UkrPoshtaStandartPage {
         return verify;
     }
 
+    public SelenideElement getFirstReceiverInputField () {
+        return receiverInputFields.get(0);
+    }
+
+    public SelenideElement getSubmitButton () {
+        return submitButton;
+    }
+
+    public SelenideElement getDespatchMoreInfoReceiverName () {
+        return despatchMoreInfoReceiverName;
+    }
+
+    public SelenideElement getPhoneInputModifyPage () {
+        return phoneInputModifyPage;
+    }
+
+    public SelenideElement getDespatchMoreInfoReceiverPhone () {
+        return despatchMoreInfoReceiverPhone;
+    }
+
+    public SelenideElement getDeleteDespatchButton () {
+        return deleteDespatchButton;
+    }
+
+    public SelenideElement getDeliveryMethodDropdownList () {
+        return deliveryMethodDropdownList.get(0);
+    }
+
+    public SelenideElement getDespatchMoreInfoButton () {
+        return despatchMoreInfoButton;
+    }
+     public SelenideElement getStandartCreateBtn () {
+        return standartCreateBtn;
+     }
 }
 

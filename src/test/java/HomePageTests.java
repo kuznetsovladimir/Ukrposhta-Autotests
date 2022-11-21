@@ -1,8 +1,9 @@
-import Utils.WebDriverFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.ukrposhta.Pages.HomePage;
+import utils.Waiter;
+import utils.WebDriverFactory;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -13,80 +14,56 @@ public class HomePageTests {
         WebDriverFactory driver = new WebDriverFactory();
         driver.GetDriver("FIREFOX");
         open("https://ukrposhta.ua/");
-
     }
 
     @Test (priority = 1)
-    public void changeLanguageToRu () throws InterruptedException {
+    public void changeLanguageToRu () {
         HomePage homePage = new HomePage();
+        Waiter waiter = new Waiter();
 
-        Thread.sleep(3000);
-        homePage.openLanguageSelectionDropdown();
-        Thread.sleep(3000);
-        Assert.assertTrue(homePage.languageDropdownValuesCompare("RU", "EN"));
-
+        waiter.waitForVisibility(homePage.getLanguageDropdownButton());
+        homePage.clickOnTheLanguageDropdownButton();
+        waiter.waitForVisibility(homePage.getFirstLanguageButton());
+        Assert.assertTrue(homePage.getLanguageDropdownValuesCompare("RU", "EN"));
         homePage.selectRuLanguage();
-        Thread.sleep(3000);
-        Assert.assertTrue(homePage.ruLanguageAppliedCheck());
-        Thread.sleep(3000);
-        homePage.openLanguageSelectionDropdown();
-        Thread.sleep(3000);
-        Assert.assertTrue(homePage.languageDropdownValuesCompare("UA", "EN"));
+        Assert.assertTrue(homePage.getRuLanguageAppliedCheck());
+        waiter.waitForVisibility(homePage.getLanguageDropdownButton());
+        homePage.clickOnTheLanguageDropdownButton();
+        waiter.waitForVisibility(homePage.getFirstLanguageButton());
+        Assert.assertTrue(homePage.getLanguageDropdownValuesCompare("UA", "EN"));
     }
 
     @Test (priority = 2)
-    public void changeLanguageToEn () throws InterruptedException {
+    public void changeLanguageToEn () {
         HomePage homePage = new HomePage();
-        Thread.sleep(3000);
-        homePage.openLanguageSelectionDropdown();
-        Thread.sleep(3000);
-        Assert.assertTrue(homePage.languageDropdownValuesCompare("RU", "EN"));
+        Waiter waiter = new Waiter();
+
+        homePage.clickOnTheLanguageDropdownButton();
+        waiter.waitForVisibility(homePage.getFirstLanguageButton());
+        Assert.assertTrue(homePage.getLanguageDropdownValuesCompare("RU", "EN"));
         homePage.selectEnLanguage();
-        Thread.sleep(3000);
-        Assert.assertTrue(homePage.enLanguageAppliedCheck());
-        Thread.sleep(3000);
-        homePage.openLanguageSelectionDropdown();
-        Thread.sleep(3000);
-        Assert.assertTrue(homePage.languageDropdownValuesCompare("UA", "RU"));
+        Assert.assertTrue(homePage.getEnLanguageAppliedCheck());
+        homePage.clickOnTheLanguageDropdownButton();
+        waiter.waitForVisibility(homePage.getFirstLanguageButton());
+        Assert.assertTrue(homePage.getLanguageDropdownValuesCompare("UA", "RU"));
     }
 
     @Test (priority = 3)
-    public void checkSliderItemContent () throws InterruptedException {
+    public void openIndexSearchPage () {
         HomePage homePage = new HomePage();
-        homePage.clickOnTheFirstSlickButton();
-        Thread.sleep(2000);
-        Assert.assertTrue(homePage.firstSliderContentHeader());
-        homePage.clickOnTheSecondSlickButton();
-        Thread.sleep(2000);
-        Assert.assertTrue(homePage.secondSliderContentHeader());
-        homePage.clickOnTheThirdSlickButton();
-        Thread.sleep(2000);
-        Assert.assertTrue(homePage.thirdSliderContentHeader());
-        homePage.clickOnTHeFourthSlickButton();
-        Thread.sleep(2000);
-        Assert.assertTrue(homePage.fourthSliderContentHeader());
-        homePage.clickOnTHeFifthSlickButton();
-        Thread.sleep(2000);
-        Assert.assertTrue(homePage.fifthSliderContentHeader());
+
+        homePage.clickOnTheIndexSearchButton();
+        Assert.assertTrue(homePage.getIndexSearchPageOpened());
     }
 
     @Test (priority = 4)
-    public void openIndexSearchPage () throws InterruptedException {
-        HomePage homePage = new HomePage();
-        homePage.clickOnTheIndexSearchButton();
-        Thread.sleep(3000);
-        Assert.assertTrue(homePage.indexSearchPageOpened());
-    }
-
-    @Test (priority = 5)
-    public void openIndexSearchPageFromInput () throws InterruptedException {
+    public void openIndexSearchPageFromInput () {
         HomePage homepage = new HomePage();
+        Waiter waiter = new Waiter();
+
         homepage.scrollToIndexSearchInput();
-        Thread.sleep(2000);
+        waiter.waitForVisibility(homepage.getSearchIndexInput());
         homepage.sendKeysToIndexSearchInput();
-        Thread.sleep(2000);
-        Assert.assertTrue(homepage.indexSearchPageOpened());
+        Assert.assertTrue(homepage.getIndexSearchPageOpened());
     }
-
-
 }

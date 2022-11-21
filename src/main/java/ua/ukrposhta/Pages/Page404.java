@@ -12,6 +12,10 @@ public class Page404 {
     private final SelenideElement errorExp = $x("//*[@class=\"title-block-container text-center\"]/p");
     private final SelenideElement toTheHomePageButton = $x("//*[@class=\"title-block-container text-center\"]/a");
 
+    public SelenideElement getPageHeader () {
+        return pageHeader;
+    }
+
     public String getHeaderText () {
         String text = pageHeader.getText();
         return text;

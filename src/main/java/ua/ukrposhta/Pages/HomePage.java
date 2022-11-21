@@ -10,44 +10,59 @@ public class HomePage {
 
 
 
-    private final SelenideElement contactCenter = $x("/html/body/header/div[1]/div/div/div/p[2]/a");
-    private final SelenideElement languageDropdownButton = $x("/html/body/header/div[2]/div[1]/div/div[4]/span");
-    private final SelenideElement firstLanguageButton = $x("/html/body/header/div[2]/div[1]/div/div[4]/div/div/a[1]");
-    private final SelenideElement secondLanguageButton = $x("/html/body/header/div[2]/div[1]/div/div[4]/div/div/a[2]");
-    private final SelenideElement firstSlickButton = $x("/html/body/div[3]/div/div[1]/ul/li[1]");
-    private final SelenideElement secondSlickButton = $x("/html/body/div[3]/div/div[1]/ul/li[2]");
-    private final SelenideElement thirdSlickButton = $x("//html/body/div[3]/div/div[1]/ul/li[3]");
-    private final SelenideElement fourthSlickButton = $x("//html/body/div[3]/div/div[1]/ul/li[4]");
-    private final SelenideElement fifthSlickButton = $x("//html/body/div[3]/div/div[1]/ul/li[5]");
-    private final SelenideElement firstSliderItemContent = $x("/html/body/div[3]/div/div[1]/div/div/a[1]/div[2]/div/h2");
-    private final SelenideElement secondSliderItemContent = $x("/html/body/div[3]/div/div[1]/div/div/a[2]/div[2]/div/h2");
-    private final SelenideElement thirdSliderItemContent = $x("/html/body/div[3]/div/div[1]/div/div/a[3]/div[2]/div/h2");
-    private final SelenideElement fourthSliderItemContent = $x("/html/body/div[3]/div/div[1]/div/div/a[4]/div[2]/div/h2");
-    private final SelenideElement fifthSliderItemContent = $x("/html/body/div[3]/div/div[1]/div/div/a[5]/div[2]/div/h2");
-    private final SelenideElement indexSearchButton = $x("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/a");
-    private final SelenideElement IndexPageHeader = $x("/html/body/app-root/div/div/div/div/h3");
-    private  final SelenideElement searchIndexInput = $x("//*[@id=\"main\"]/div/div[6]/div/div/div/div/form/div/div[1]/input");
-    private final SelenideElement registrationButton = $x("/html/body/header/div[2]/div[1]/div/div[2]/a[2]/span");
+    private final SelenideElement contactCenter = $x("//div[@class=\"header-call-center\"]/p[2]/a");
+    private final SelenideElement languageDropdownButton = $("#language-menu-trigger-header");
+    private final SelenideElement firstLanguageButton = $x("//div[@id=\"language-menu-block-header\"]/div[1]/a[1]");
+    private final SelenideElement secondLanguageButton = $x("//div[@id=\"language-menu-block-header\"]/div[1]/a[2]");
+    private final SelenideElement indexSearchButton = $("#find_index1");
+    private final SelenideElement indexPageHeader = $x("//div[@class=\"container\"]/h3");
+    private  final SelenideElement searchIndexInput = $x("//input[@name=\"city-name\"]");
+    private final SelenideElement registrationButton = $x("//div[@class=\"user-account col-auto desctop\"]/a[2]/span");
     private final SelenideElement bottomHeader = $("#bottom-header");
 
+    /**
+     * Get language change dropdown-button
+     */
+    public SelenideElement getLanguageDropdownButton() {
+        return languageDropdownButton;
+    }
 
     /**
-     * Click on the language selection button
+     * Get "Знайти індекс за адресою" input field
      */
-    public void openLanguageSelectionDropdown() {
-        languageDropdownButton.click();
+    public SelenideElement getSearchIndexInput() {
+        return searchIndexInput;
+    }
+
+    /**
+     * Get first option of the language change dropdown
+     */
+    public SelenideElement getFirstLanguageButton() {
+        return firstLanguageButton;
+    }
+
+    /**
+     * Get header of the "Знайти індекс" page
+     */
+    public SelenideElement getIndexPageHeader () {
+        return indexPageHeader;
+    }
+
+    /**
+     * Get bottom section of the header
+     */
+    public SelenideElement getBottomHeader () {
+        return bottomHeader;
     }
 
     /**
      * Comparing actual and expected values provided in the language selection dropdown
      */
-    public boolean languageDropdownValuesCompare(String valueOne, String valueTwo){
+    public boolean getLanguageDropdownValuesCompare(String valueOne, String valueTwo){
         String firstValue = firstLanguageButton.getText();
         String secondValue = secondLanguageButton.getText();
 
-        if(firstValue.equals(valueOne) && secondValue.equals(valueTwo)){
-            return true;
-        } return false;
+        return firstValue.equals(valueOne) && secondValue.equals(valueTwo);
     }
 
     /**
@@ -67,77 +82,17 @@ public class HomePage {
     /**
      * Check if the website language changed to RU
      */
-    public boolean ruLanguageAppliedCheck (){
+    public boolean getRuLanguageAppliedCheck(){
         String ruText = contactCenter.getText();
         return ruText.equals("контакт-центр");
     }
 
     /**
      * Check if the website language changed to RU
-     *
      */
-    public boolean enLanguageAppliedCheck () {
+    public boolean getEnLanguageAppliedCheck() {
         String enText = contactCenter.getText();
         return enText.equals("contact center");
-    }
-
-    /**
-     * Click on the first slick button
-     */
-    public void clickOnTheFirstSlickButton() {
-        firstSlickButton.click();
-    }
-
-    /**
-     * Click on the second slick button
-     */
-    public void clickOnTheSecondSlickButton() {
-        secondSlickButton.click();
-    }
-
-    /**
-     * Click on the third slick button
-     */
-    public void clickOnTheThirdSlickButton() {
-        thirdSlickButton.click();
-    }
-
-    public void clickOnTHeFourthSlickButton () { fourthSlickButton.click();}
-
-    public void clickOnTHeFifthSlickButton () { fifthSlickButton.click();}
-
-    /**
-     * Verify first slider item content header
-     */
-    public boolean firstSliderContentHeader() {
-        String headerText = firstSliderItemContent.getText();
-        return headerText.equals("Про доставку за кордон розповідайте");
-    }
-
-    /**
-     * Verify second slider item content header
-     */
-    public boolean secondSliderContentHeader() {
-        String headerText = secondSliderItemContent.getText();
-        return headerText.equals("Замовляйте онлайн");
-    }
-
-    /**
-     * Verify third slider item content header
-     */
-    public boolean thirdSliderContentHeader() {
-        String headerText = thirdSliderItemContent.getText();
-        return headerText.equals("Доставка на деокуповані території");
-    }
-
-    public boolean fourthSliderContentHeader() {
-        String headerText = fourthSliderItemContent.getText();
-        return headerText.equals("Купуйте з користю для себе та країни");
-    }
-
-    public boolean fifthSliderContentHeader() {
-        String headerText = fifthSliderItemContent.getText();
-        return headerText.equals("Продавайте товари за кордон");
     }
 
     /**
@@ -150,8 +105,8 @@ public class HomePage {
     /**
      * Verify that the Index search page is opened
      */
-    public boolean indexSearchPageOpened () {
-        String headerText = IndexPageHeader.getText();
+    public boolean getIndexSearchPageOpened() {
+        String headerText = indexPageHeader.getText();
         return headerText.equals("Знайти поштовий індекс");
     }
 
@@ -176,8 +131,11 @@ public class HomePage {
         registrationButton.click();
     }
 
-    public SelenideElement getBottomHeader () {
-        return bottomHeader;
+    /**
+     * Click on the language dropdown button
+     */
+    public void clickOnTheLanguageDropdownButton () {
+        languageDropdownButton.click();
     }
 
 

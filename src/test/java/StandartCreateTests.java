@@ -1,4 +1,3 @@
-import Utils.WebDriverFactory;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
@@ -8,24 +7,21 @@ import ua.ukrposhta.Pages.HomePage;
 import ua.ukrposhta.Pages.LogInPage;
 import ua.ukrposhta.Pages.PersonalAccountPage;
 import ua.ukrposhta.Pages.UkrPoshtaStandartPage;
+import utils.TestData;
+import utils.Waiter;
+import utils.WebDriverFactory;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
-public class StandartCreateTests {
-    public int sleep = 3000;
+public class StandartCreateTests extends TestData {
+
     @BeforeMethod
     public void setUp () throws InterruptedException {
-
-
-
         WebDriverFactory driver = new WebDriverFactory();
-        driver.GetDriver("FIREFOX");
 
-
+        driver.GetDriver("firefox");
         open("https://ukrposhta.ua/");
-
-
     }
 
     @Test (priority = 1)
@@ -33,29 +29,25 @@ public class StandartCreateTests {
     public void createNewDespatch () {
         HomePage homePage  = new HomePage();
         LogInPage logInPage = new LogInPage();
-
-
+        Waiter waiter = new Waiter();
         UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
-
         PersonalAccountPage personalAccountPage = new PersonalAccountPage();
-        homePage.clickOnTheRegistrationButton();
+
         SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
-        if(acceptCookiesButton.isDisplayed())
-        {acceptCookiesButton.click();}
-        Selenide.sleep(sleep);
+        if (acceptCookiesButton.isDisplayed()) {acceptCookiesButton.click();};
 
-
+        homePage.clickOnTheRegistrationButton();
+        waiter.waitForVisibility(logInPage.getPersonalAccountHeader());
         logInPage.clickOnTheLogInButton();
-        Selenide.sleep(sleep);
-        logInPage.fillTheEmailField(personalAccountPage.getEmail());
-        logInPage.fillPasswordField(personalAccountPage.getPassword());
+        waiter.waitForVisibility(logInPage.getAuthorizationHeader());
+        logInPage.fillTheEmailField(TEST_EMAIL);
+        logInPage.fillPasswordField(VALID_PASS);
         logInPage.clickOnTheEnterButton();
-        Selenide.sleep(sleep);
-
-
+        waiter.waitForVisibility(logInPage.getStopSessionButton());
         personalAccountPage.clickOnTheUkrPoshtaStandartLink();
+        waiter.waitForVisibility(standartPage.getStandartCreateBtn());
         standartPage.clickOnTheStandartCreateBtn();
-        Selenide.sleep(sleep);
+        waiter.waitForVisibility(standartPage.getFirstReceiverInputField());
         standartPage.fillReceiverSection();
         standartPage.clickOnTheDeliveryDropdown();
         standartPage.clickOnTheDeliveryOption();
@@ -64,61 +56,62 @@ public class StandartCreateTests {
         standartPage.fillHouseInput();
         standartPage.fillWeightInput();
         standartPage.fillLengthInput();
-        Selenide.sleep(4000);
+        standartPage.getSubmitButton().scrollTo();
+        Selenide.sleep(2000);
         standartPage.clickOnSubmitButton();
-        Selenide.sleep(4000);
+        Selenide.sleep(2000);
         Assert.assertTrue(standartPage.getDespatchCard().isDisplayed());
-        Selenide.sleep(4000);
     }
 
     @Test (priority = 2)
     public void modifyDespatch () {
         UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
+        Waiter waiter = new Waiter();
         open("https://ok.ukrposhta.ua/ua/lk/standart");
 
         standartPage.clickOnTheMoreInfoButton();
-        Selenide.sleep(sleep);
+        waiter.waitForVisibility(standartPage.getDespatchMoreInfoReceiverName());
         Assert.assertTrue(standartPage.verifyReceiverName());
         standartPage.clickOnModifyButton();
-        Selenide.sleep(sleep);
+        waiter.waitForVisibility(standartPage.getPhoneInputModifyPage());
         standartPage.clearPhoneInput();
+        Selenide.sleep(2000);
         standartPage.fillPhoneInput();
+        standartPage.getSubmitButton().scrollTo();
+        Selenide.sleep(2000);
         standartPage.clickOnSubmitButton();
-        Selenide.sleep(sleep);
+        Selenide.sleep(2000);
+        standartPage.getDespatchMoreInfoButton().scrollTo();
         standartPage.clickOnTheMoreInfoButton();
-        Selenide.sleep(sleep);
         Assert.assertTrue(standartPage.verifyNewNumber());
     }
 
     @Test (priority = 3)
     public void deleteDespatch () {
         UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
+        Waiter waiter = new Waiter();
         open("https://ok.ukrposhta.ua/ua/lk/standart");
 
         standartPage.clickOnTheMoreInfoButton();
-        Selenide.sleep(sleep);
+        waiter.waitForVisibility(standartPage.getDeleteDespatchButton());
         standartPage.clickOnTheDeleteDespatchButton();
-        Selenide.sleep(1000);
-        Assert.assertTrue(standartPage.getDeleteMessageBox().isDisplayed());
+        waiter.waitForVisibility(standartPage.getDeleteMessageBox());
         Assert.assertTrue(standartPage.verifyConfirmDeleteBox());
         standartPage.clickOnDeleteButton();
-        Selenide.sleep(sleep);
-        Assert.assertTrue(standartPage.getNoDespatchesMessageBox().isDisplayed());
-        Selenide.sleep(1000);
-        Assert.assertTrue(standartPage.verifyDespatchDeleted());
+        waiter.waitForVisibility(standartPage.getNoDespatchesMessageBox());
     }
 
     @Test (priority = 4)
     public void checkDeliveryMethodsValues () {
         UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
+        Waiter waiter = new Waiter();
         open("https://ok.ukrposhta.ua/ua/lk/standart");
-
+        waiter.waitForVisibility(standartPage.getStandartCreateBtn());
         standartPage.clickOnTheStandartCreateBtn();
-        Selenide.sleep(sleep);
+        waiter.waitForVisibility(standartPage.getFirstReceiverInputField());
         standartPage.clickOnTheDeliveryDropdown();
-        Selenide.sleep(sleep);
+        waiter.waitForVisibility(standartPage.getDeliveryMethodDropdownList());
         Assert.assertTrue(standartPage.verifyDeliveryOptionsValues());
-
     }
 
 }
