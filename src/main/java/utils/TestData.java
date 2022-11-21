@@ -1,6 +1,7 @@
 package utils;
 
 public class TestData {
+
     public final String POSTAL_INDEX = "49086";
     public final String ADDRESS = "вул. Підгірна, 19.";
     public final String FIND_ADDRESS_PAGE_HEADER = "Знайти адресу";

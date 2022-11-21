@@ -20,7 +20,7 @@ public class StandartCreateTests extends TestData {
     public void setUp () throws InterruptedException {
         WebDriverFactory driver = new WebDriverFactory();
 
-        driver.GetDriver("FIREFOX");
+        driver.GetDriver("firefox");
         open("https://ukrposhta.ua/");
     }
 
@@ -45,6 +45,7 @@ public class StandartCreateTests extends TestData {
         logInPage.clickOnTheEnterButton();
         waiter.waitForVisibility(logInPage.getStopSessionButton());
         personalAccountPage.clickOnTheUkrPoshtaStandartLink();
+        waiter.waitForVisibility(standartPage.getStandartCreateBtn());
         standartPage.clickOnTheStandartCreateBtn();
         waiter.waitForVisibility(standartPage.getFirstReceiverInputField());
         standartPage.fillReceiverSection();
@@ -56,10 +57,10 @@ public class StandartCreateTests extends TestData {
         standartPage.fillWeightInput();
         standartPage.fillLengthInput();
         standartPage.getSubmitButton().scrollTo();
-        waiter.waitForVisibility(standartPage.getSubmitButton());
+        Selenide.sleep(2000);
         standartPage.clickOnSubmitButton();
-        //waiter.waitForVisibility(standartPage.getDespatchCard());
-        Selenide.sleep(10000);
+        Selenide.sleep(2000);
+        Assert.assertTrue(standartPage.getDespatchCard().isDisplayed());
     }
 
     @Test (priority = 2)
@@ -74,15 +75,18 @@ public class StandartCreateTests extends TestData {
         standartPage.clickOnModifyButton();
         waiter.waitForVisibility(standartPage.getPhoneInputModifyPage());
         standartPage.clearPhoneInput();
+        Selenide.sleep(2000);
         standartPage.fillPhoneInput();
+        standartPage.getSubmitButton().scrollTo();
+        Selenide.sleep(2000);
         standartPage.clickOnSubmitButton();
-        waiter.waitForVisibility(standartPage.getDespatchMoreInfoButton());
+        Selenide.sleep(2000);
+        standartPage.getDespatchMoreInfoButton().scrollTo();
         standartPage.clickOnTheMoreInfoButton();
-        waiter.waitForVisibility(standartPage.getDespatchMoreInfoReceiverPhone());
         Assert.assertTrue(standartPage.verifyNewNumber());
     }
 
-    /*@Test (priority = 3)
+    @Test (priority = 3)
     public void deleteDespatch () {
         UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
         Waiter waiter = new Waiter();
@@ -95,14 +99,14 @@ public class StandartCreateTests extends TestData {
         Assert.assertTrue(standartPage.verifyConfirmDeleteBox());
         standartPage.clickOnDeleteButton();
         waiter.waitForVisibility(standartPage.getNoDespatchesMessageBox());
-    }*/
+    }
 
     @Test (priority = 4)
     public void checkDeliveryMethodsValues () {
         UkrPoshtaStandartPage standartPage = new UkrPoshtaStandartPage();
         Waiter waiter = new Waiter();
         open("https://ok.ukrposhta.ua/ua/lk/standart");
-
+        waiter.waitForVisibility(standartPage.getStandartCreateBtn());
         standartPage.clickOnTheStandartCreateBtn();
         waiter.waitForVisibility(standartPage.getFirstReceiverInputField());
         standartPage.clickOnTheDeliveryDropdown();

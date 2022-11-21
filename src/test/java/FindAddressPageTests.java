@@ -39,9 +39,6 @@ public class FindAddressPageTests extends TestData {
         findAddress.fillInputField();
         findAddress.clickOnSearchButton();
         waiter.waitForVisibility(findAddress.getResponseBlock());
-        Assert.assertEquals(findAddress.addressText(), ADDRESS);
-
-
-
+        Assert.assertEquals(findAddress.getAddressText(), ADDRESS);
     }
 }

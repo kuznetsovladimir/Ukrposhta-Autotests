@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
 public class FindPostalIndexTests extends TestData {
-    int sleep = 3000;
+
     @BeforeMethod
     public void setUp () {
         WebDriverFactory driver = new WebDriverFactory();
@@ -21,8 +21,6 @@ public class FindPostalIndexTests extends TestData {
         SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
         if(acceptCookiesButton.isDisplayed())
         {acceptCookiesButton.click();}
-
-
     }
 
     @Test
@@ -42,11 +40,6 @@ public class FindPostalIndexTests extends TestData {
         waiter.waitForVisibility(postalPage.getSubmitButton());
         postalPage.clickOnSubmitButton();
         waiter.waitForVisibility(postalPage.getIndexResponseBlock());
-        Assert.assertEquals(postalPage.indexResponseBlockHeaderText(), POSTAL_INDEX);
-
-
+        Assert.assertEquals(postalPage.getIndexResponseBlockHeaderText(), POSTAL_INDEX);
     }
-
-
-
 }

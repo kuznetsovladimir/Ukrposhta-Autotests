@@ -21,7 +21,7 @@ public class UkrPoshtaStandartPage extends TestData {
     private final SelenideElement houseInput = $x("//input[@id=\"house\"]");
     private final SelenideElement weightInput = $x("//input[@id=\"weight\"]");
     private final SelenideElement lengthInput = $x("//input[@id=\"length\"]");
-    private final SelenideElement submitButton = $x("//button[@id=\"submit-button\"]");
+    private final SelenideElement submitButton = $x("//button[@class=\"btn btn-lg form-bottom-btn account-btn-success\"]");
     private final SelenideElement deliveryMethodDropdown = $("#delivery-method");
     private final SelenideElement deliveryMethodOption = $x("//option[@value=\"W2W\"]");
 
@@ -202,5 +202,8 @@ public class UkrPoshtaStandartPage extends TestData {
     public SelenideElement getDespatchMoreInfoButton () {
         return despatchMoreInfoButton;
     }
+     public SelenideElement getStandartCreateBtn () {
+        return standartCreateBtn;
+     }
 }
 

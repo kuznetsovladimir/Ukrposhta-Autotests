@@ -1,1 +1,0 @@
-{"uuid":"1cc3ab14-5549-4dca-9a6c-76a05ff83c97","name":"StandartCreateTests.setUp","children":["9e03f4f9-a68f-4916-8096-5e687ebb16c6"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1668712551498,"stop":1668712560569}],"afters":[],"start":1668712551497,"stop":1668712560570}
