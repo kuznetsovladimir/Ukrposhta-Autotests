@@ -16,4 +16,9 @@ public class TestData {
     public final String CANCEL_BUTTON_NAME = "Скасувати";
     public final String DELETE_MESSAGE = "Ви дійсно бажаєте видалити відправлення?";
     public final String NO_DESPATCHES_MESSAGE = "Увага! Відправлення відсутні. Для початку роботи натисніть кнопку Створити відправлення.";
+    public final String USER_KEY = "637d5af3866f332ced48448e4a2c22e8";
+    public final String CITY_REF = "e71f8842-4b33-11e4-ab6d-005056801329";
+    public final String STREET_REF = "0099b64f-213f-11e8-8974-0025b502a06e";
+    public final String URL = "https://api.novaposhta.ua/v2.0/json/";
+    public final String DELIVERY_CITY_REF = "db5c88e0-391c-11dd-90d9-001a92567626";
 }

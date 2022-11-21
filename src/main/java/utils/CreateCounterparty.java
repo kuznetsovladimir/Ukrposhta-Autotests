@@ -17,7 +17,7 @@ public class CreateCounterparty {
         final String URL = "https://api.novaposhta.ua/v2.0/json/";
        // String id = "c983247e-36b7-11ed-a60f-48df37b921db";
         HttpPost createCounterParty = new HttpPost(URL);
-        HttpEntity body = new StringEntity(String.valueOf(constants.counterpartyDataInitial()), "utf-8");
+        HttpEntity body = new StringEntity(String.valueOf(constants.getCounterpartyDataInitial()), "utf-8");
         createCounterParty.setEntity(body);
         HttpResponse response = HttpClientBuilder.create().build().execute(createCounterParty);
         HttpEntity entity = response.getEntity();

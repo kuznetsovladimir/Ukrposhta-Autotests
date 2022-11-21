@@ -11,24 +11,21 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class ApiTest {
+
     private String contactRef;
-
-
 
     @Test (priority = 1)
     public void createContactPerson () throws IOException {
         ApiConstants constants = new ApiConstants();
 
         HttpPost createContactPerson = new HttpPost(constants.getURL());
-        HttpEntity body = new StringEntity(String.valueOf(constants.contactPersonDataInitial()), "utf-8");
+        HttpEntity body = new StringEntity(String.valueOf(constants.getContactPersonDataInitial()), "utf-8");
         createContactPerson.setEntity(body);
         HttpResponse response = HttpClientBuilder.create().build().execute(createContactPerson);
         HttpEntity entity = response.getEntity();
         String value = EntityUtils.toString(entity);
         contactRef = value.substring(32,68);
         Assert.assertEquals(value.substring(11,15), "true");
-
-
     }
 
     @Test (priority = 2)
@@ -36,17 +33,12 @@ public class ApiTest {
         ApiConstants constants = new ApiConstants();
 
         HttpPost updateContactPerson = new HttpPost(constants.getURL());
-        HttpEntity body = new StringEntity(String.valueOf(constants.contactPersonDataUpdate(contactRef)), "utf-8");
+        HttpEntity body = new StringEntity(String.valueOf(constants.getContactPersonDataUpdate(contactRef)), "utf-8");
         updateContactPerson.setEntity(body);
         HttpResponse response = HttpClientBuilder.create().build().execute(updateContactPerson);
         HttpEntity entity = response.getEntity();
         String value = EntityUtils.toString(entity);
         Assert.assertEquals(value.substring(11,15), "true");
-
-        //contactRef = EntityUtils.toString(entity).substring(31,69);
-
-        //Assert.assertEquals(contactRef.length(), 38);
-
     }
 
     @Test (priority = 3)
@@ -54,17 +46,11 @@ public class ApiTest {
         ApiConstants constants = new ApiConstants();
 
         HttpPost deleteContactPerson = new HttpPost(constants.getURL());
-        HttpEntity body = new StringEntity(String.valueOf(constants.contactPersonDataDelete( contactRef)), "utf-8");
+        HttpEntity body = new StringEntity(String.valueOf(constants.getContactPersonDataDelete(contactRef)), "utf-8");
         deleteContactPerson.setEntity(body);
         HttpResponse response = HttpClientBuilder.create().build().execute(deleteContactPerson);
         HttpEntity entity = response.getEntity();
-
         String value = EntityUtils.toString(entity);
         Assert.assertEquals(value.substring(11,15), "true");
-
     }
-
-
-
-
 }
