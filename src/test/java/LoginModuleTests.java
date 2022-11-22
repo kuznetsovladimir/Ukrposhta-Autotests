@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginModuleTests extends TestData {
+
     @BeforeMethod
     public void setUp() {
         WebDriverFactory driver = new WebDriverFactory();
@@ -20,12 +21,11 @@ public class LoginModuleTests extends TestData {
         SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
         if(acceptCookiesButton.isDisplayed())
         {acceptCookiesButton.click();}
-
     }
 
 
     @Test (priority = 1)
-    public void loginWithValidCreds () throws InterruptedException {
+    public void loginWithValidCreds () {
         HomePage homePage = new HomePage();
         LogInPage logInPage = new LogInPage();
         Waiter waiter = new Waiter();
@@ -38,11 +38,11 @@ public class LoginModuleTests extends TestData {
         logInPage.clickOnTheEnterButton();
         waiter.waitForVisibility(logInPage.getStopSessionButton());
         logInPage.getStopSessionButton().click();
-
+        Assert.assertTrue(logInPage.isVerifyLogIn());
     }
 
     @Test (priority = 2)
-    public void loginWithInvalidEmail () throws InterruptedException {
+    public void loginWithInvalidEmail () {
         HomePage homePage = new HomePage();
         LogInPage logInPage = new LogInPage();
         Waiter waiter = new Waiter();
@@ -56,11 +56,10 @@ public class LoginModuleTests extends TestData {
         logInPage.clickOnTheEnterButton();
         waiter.waitForVisibility(logInPage.getErrorMessageMail());
         Assert.assertTrue(logInPage.verifyErrorMessageMail());
-
     }
 
     @Test (priority = 3)
-    public void loginWithInvalidPassword () throws InterruptedException {
+    public void loginWithInvalidPassword () {
         HomePage homePage = new HomePage();
         LogInPage logInPage = new LogInPage();
         Waiter waiter = new Waiter();
@@ -75,11 +74,10 @@ public class LoginModuleTests extends TestData {
         logInPage.clickOnTheEnterButton();
         waiter.waitForVisibility(logInPage.getErrorMessagePass());
         Assert.assertTrue(logInPage.verifyErrorMessagePass());
-
     }
 
     @Test (priority = 4)
-    public void loginWithNoData () throws InterruptedException {
+    public void loginWithNoData () {
         HomePage homePage = new HomePage();
         LogInPage logInPage = new LogInPage();
         Waiter waiter = new Waiter();
@@ -90,6 +88,5 @@ public class LoginModuleTests extends TestData {
         waiter.waitForVisibility(logInPage.getAuthorizationHeader());
         logInPage.clickOnTheEnterButton();
         Assert.assertTrue(logInPage.authorizationSectionOpened());
-
     }
 }

@@ -100,36 +100,6 @@ public class LogInPage {
     }
 
     /**
-     *
-     */
-    public String getValidPass () {
-        return validPass;
-    }
-
-    /**
-     *
-     */
-    public String getInvalidPass () {
-        return invalidPass;
-    }
-
-    /**
-     *
-     */
-    public String getValidEmail () {
-        return validEmail;
-    }
-
-
-
-    /**
-     *
-     */
-    public String getInvalidEmail () {
-        return invalidEmail;
-    }
-
-    /**
      * Fill Email field with invalid data
      */
     public void fillEmailFieldInvalid (String emailValue) {
@@ -140,10 +110,8 @@ public class LogInPage {
      * Verify that password is hidden
      */
     public boolean verifyPasswordIsHidden (String password) {
-    String inputValue = passwordField.getText();
-    if (inputValue.equals(password)){
-        return false;
-    } return true;
+        String inputValue = passwordField.getText();
+        return !inputValue.equals(password);
     }
 
     /**
@@ -171,7 +139,7 @@ public class LogInPage {
     /**
      * Verify that the user is logged in
      */
-    public boolean verifyLogIn () {
+    public boolean isVerifyLogIn() {
         String text = stopSessionButton.getText();
         return text.equals("ЗАВЕРШИТИ СЕАНС");
     }

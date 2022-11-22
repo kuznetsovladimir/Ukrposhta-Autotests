@@ -7,11 +7,6 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class FindPostalIndexPage extends TestData {
 
-
-
-
-    private final SelenideElement cityDropdownField = $x("//input[@id=\"toWhere\"]");
-    private final SelenideElement cityDropdownList = $x("//ul[@class=\"cities-dropdown-menu show ng-star-inserted\"]");
     private final SelenideElement cityDropdownListFirstOption = $x("//button[@id=\"3641\"]");
     private final SelenideElement streetDropdownList = $x("//ul[@class=\"street-dropdown-menu show ng-star-inserted\"]");
     private final SelenideElement streetDropdownListFirstOption = $x("//button[@id=\"S175741\"]");
@@ -21,13 +16,6 @@ public class FindPostalIndexPage extends TestData {
     private final SelenideElement indexResponseBlock = $x("//response-index-loader");
     private final SelenideElement indexResponseBlockHeader = $x("//response-index-loader/div[1]/p[1]");
     private final SelenideElement searchAddressByIndexNavLink = $x("//form/a[1]");
-
-    /**
-     * Get "Місто" dropdown-list
-     */
-    public SelenideElement getCityDropdownList () {
-        return cityDropdownList;
-    }
 
     /**
      * Get "Вулиця" dropdown-list
@@ -62,13 +50,6 @@ public class FindPostalIndexPage extends TestData {
      */
     public String getIndexResponseBlockHeaderText() {
         return indexResponseBlockHeader.getText();
-    }
-
-    /**
-     * Get text of the "Місто" input field
-     */
-    public String getCityDropdownFieldText() {
-        return cityDropdownField.getText();
     }
 
     /**

@@ -24,13 +24,13 @@ public class HomePageTests {
         waiter.waitForVisibility(homePage.getLanguageDropdownButton());
         homePage.clickOnTheLanguageDropdownButton();
         waiter.waitForVisibility(homePage.getFirstLanguageButton());
-        Assert.assertTrue(homePage.getLanguageDropdownValuesCompare("RU", "EN"));
+        Assert.assertTrue(homePage.isLanguageDropdownValuesEqual("RU", "EN"));
         homePage.selectRuLanguage();
-        Assert.assertTrue(homePage.getRuLanguageAppliedCheck());
+        Assert.assertTrue(homePage.isRuLanguageApplied());
         waiter.waitForVisibility(homePage.getLanguageDropdownButton());
         homePage.clickOnTheLanguageDropdownButton();
         waiter.waitForVisibility(homePage.getFirstLanguageButton());
-        Assert.assertTrue(homePage.getLanguageDropdownValuesCompare("UA", "EN"));
+        Assert.assertTrue(homePage.isLanguageDropdownValuesEqual("UA", "EN"));
     }
 
     @Test (priority = 2)
@@ -40,12 +40,12 @@ public class HomePageTests {
 
         homePage.clickOnTheLanguageDropdownButton();
         waiter.waitForVisibility(homePage.getFirstLanguageButton());
-        Assert.assertTrue(homePage.getLanguageDropdownValuesCompare("RU", "EN"));
+        Assert.assertTrue(homePage.isLanguageDropdownValuesEqual("RU", "EN"));
         homePage.selectEnLanguage();
-        Assert.assertTrue(homePage.getEnLanguageAppliedCheck());
+        Assert.assertTrue(homePage.isEnLanguageApplied());
         homePage.clickOnTheLanguageDropdownButton();
         waiter.waitForVisibility(homePage.getFirstLanguageButton());
-        Assert.assertTrue(homePage.getLanguageDropdownValuesCompare("UA", "RU"));
+        Assert.assertTrue(homePage.isLanguageDropdownValuesEqual("UA", "RU"));
     }
 
     @Test (priority = 3)
@@ -53,7 +53,7 @@ public class HomePageTests {
         HomePage homePage = new HomePage();
 
         homePage.clickOnTheIndexSearchButton();
-        Assert.assertTrue(homePage.getIndexSearchPageOpened());
+        Assert.assertTrue(homePage.isIndexSearchPageOpened());
     }
 
     @Test (priority = 4)
@@ -64,6 +64,6 @@ public class HomePageTests {
         homepage.scrollToIndexSearchInput();
         waiter.waitForVisibility(homepage.getSearchIndexInput());
         homepage.sendKeysToIndexSearchInput();
-        Assert.assertTrue(homepage.getIndexSearchPageOpened());
+        Assert.assertTrue(homepage.isIndexSearchPageOpened());
     }
 }
