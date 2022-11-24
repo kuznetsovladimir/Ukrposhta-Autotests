@@ -11,28 +11,19 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class PersonalAccountPage {
 
-    private final SelenideElement sideBarUserProfile = $x("//*[@id=\"accordion\"]/li[1]/a");
-    private final SelenideElement sideBarLoyaltyProgram = $x("//*[@id=\"accordion\"]/li[2]/div[1]/a[1]");
-    private final SelenideElement sideBarPoshtaExpress = $x("//*[@id=\"accordion\"]/li[3]/div[1]/a[1]");
-    private final SelenideElement sideBarPoshtaStandart = $x("//*[@id=\"accordion\"]/li[4]/div[1]/a[1]");
-    private final SelenideElement sideBarPoshtaDocs = $x("//*[@id=\"accordion\"]/li[5]/div[1]/a[1]");
-    private final SelenideElement sideBarLetter = $x("//*[@id=\"accordion\"]/li[6]/div[1]/a[1]");
-    private final SelenideElement sideBarInternational = $x("//*[@id=\"accordion\"]/li[7]/div[1]/a[1]");
-    private final SelenideElement sidebarDeliveryCall = $x("//*[@id=\"accordion\"]/li[8]/a");
     private final SelenideElement expressPoshtaExpand = $x("//a[@href=\"#expressLink\"]");
     private final SelenideElement contactCenterHeader = $x("//div[@class=\"container\"]/h3");
-    private final SelenideElement ukrPoshtaStandartLink = $x("//*[@id=\"accordion\"]/li[4]/div[1]/a[1]");
+    private final SelenideElement ukrPoshtaStandartLink = $x("//ul[@id=\"accordion\"]/li[4]/div[1]/a");
     private final SelenideElement expandedSection = $x("//div[@class=\"accordion-inner collapse in\"]");
     private final ElementsCollection actualValues = $$("li.panel.sidebar-item");
     private final ElementsCollection expressListValues = $$(By.xpath("//*[@id=\"expressLink\"]/ul/li"));
     ArrayList<String> expressListText = new ArrayList<>();
-    ArrayList<String> actualValuesText = new ArrayList<String>();
-
+    ArrayList<String> actualValuesText = new ArrayList<>();
 
     /**
      * List of expected values
      */
-    public ArrayList<String> expressListExpected() {
+    public ArrayList<String> getExpressListExpected() {
         ArrayList<String> values = new ArrayList<>();
 
         values.add("Інструкція");
@@ -47,8 +38,8 @@ public class PersonalAccountPage {
     /**
      * List of expected values
      */
-    public ArrayList<String> sideBarListExpected () {
-        ArrayList<String> ExpectedValues = new ArrayList<String>();
+    public ArrayList<String> getSideBarListExpected() {
+        ArrayList<String> ExpectedValues = new ArrayList<>();
         ExpectedValues.add("Профіль користувача");
         ExpectedValues.add("Програма лояльності");
         ExpectedValues.add("Укрпошта Експрес");
@@ -70,10 +61,9 @@ public class PersonalAccountPage {
     /**
      * Convert elements collection to String list
      */
-    public ArrayList<String> expressList () {
+    public ArrayList<String> getExpressList() {
         for (SelenideElement expressListValue : expressListValues) {
-            String value = expressListValue.getText();
-            expressListText.add(value);
+            expressListText.add(expressListValue.getText());
         }
         return expressListText;
     }
@@ -81,27 +71,43 @@ public class PersonalAccountPage {
     /**
      * Convert elements collection to String list
      */
-    public ArrayList<String> sideBarList () {
+    public ArrayList<String> getSideBarList() {
         for (SelenideElement actualValue : actualValues) {
-            String value = actualValue.getText();
-            actualValuesText.add(value);
+            actualValuesText.add(actualValue.getText());
         } return actualValuesText;
     }
 
-    public void clickOnTheInstructionLink () {
+    /**
+     * Click on the "Питання-Відповіді" navigation link
+     */
+    public void clickOnTheFAQLink() {
         expressListValues.get(1).click();
     }
 
+    /**
+     * Get "Питання-Відповіді" page header text
+     */
     public String getContactCenterHeaderText () {
         return contactCenterHeader.getText();
     }
+
+    /**
+     * Get "Питання-Відповіді" page header
+     */
     public SelenideElement getContactCenterHeader () {
         return contactCenterHeader;
     }
 
+    /**
+     * Click on the "УкрПошта Стандарт" navigation link
+     */
     public void clickOnTheUkrPoshtaStandartLink() {
         ukrPoshtaStandartLink.click();
     }
+
+    /**
+     * Get expanded section
+     */
     public SelenideElement getExpandedSection () {
         return expandedSection;
     }

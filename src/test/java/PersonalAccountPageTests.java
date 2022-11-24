@@ -1,4 +1,3 @@
-import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -9,25 +8,21 @@ import utils.TestData;
 import utils.Waiter;
 import utils.WebDriverFactory;
 
-import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PersonalAccountPageTests extends TestData {
 
     @BeforeMethod
-    public void setUp () throws InterruptedException {
+    public void setUp () {
         HomePage homePage = new HomePage();
         LogInPage logInPage = new LogInPage();
-        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
         Waiter waiter = new Waiter();
-
         WebDriverFactory driver = new WebDriverFactory();
         driver.GetDriver("FIREFOX");
 
-        open("https://ukrposhta.ua/");
-        SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
-        if(acceptCookiesButton.isDisplayed())
-        {acceptCookiesButton.click();}
+        open(UKR_POSHTA_LINK);
+        if(cookiesButton.isDisplayed())
+        {cookiesButton.click();}
         homePage.clickOnTheRegistrationButton();
         waiter.waitForVisibility(logInPage.getPersonalAccountHeader());
     }
@@ -37,14 +32,12 @@ public class PersonalAccountPageTests extends TestData {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage();
         Waiter waiter = new Waiter();
 
-        Assert.assertEquals(personalAccountPage.sideBarList(), personalAccountPage.sideBarListExpected());
+        Assert.assertEquals(personalAccountPage.getSideBarList(), personalAccountPage.getSideBarListExpected());
         personalAccountPage.clickOnTheExpandButton();
         waiter.waitForVisibility(personalAccountPage.getExpandedSection());
-        Assert.assertEquals(personalAccountPage.expressList(), personalAccountPage.expressListExpected());
-        personalAccountPage.clickOnTheInstructionLink();
+        Assert.assertEquals(personalAccountPage.getExpressList(), personalAccountPage.getExpressListExpected());
+        personalAccountPage.clickOnTheFAQLink();
         waiter.waitForVisibility(personalAccountPage.getContactCenterHeader());
         Assert.assertEquals(personalAccountPage.getContactCenterHeaderText(), CONTACT_CENTER_EXPECTED_HEADER);
-
     }
-
 }

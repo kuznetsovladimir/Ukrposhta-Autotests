@@ -2,11 +2,12 @@ package ua.ukrposhta.Pages;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
+import utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class HomePage {
+public class HomePage extends TestData {
 
     private final SelenideElement contactCenter = $x("//div[@class=\"header-call-center\"]/p[2]/a");
     private final SelenideElement languageDropdownButton = $("#language-menu-trigger-header");
@@ -80,17 +81,15 @@ public class HomePage {
     /**
      * Check if the website language changed to RU
      */
-    public boolean isRuLanguageApplied (){
-        String ruText = contactCenter.getText();
-        return ruText.equals("контакт-центр");
+    public boolean isRuLanguageApplied () {
+        return contactCenter.getText().equals(CONTACT_CENTER_RU);
     }
 
     /**
-     * Check if the website language changed to RU
+     * Check if the website language changed to En
      */
     public boolean isEnLanguageApplied () {
-        String enText = contactCenter.getText();
-        return enText.equals("contact center");
+        return contactCenter.getText().equals(CONTACT_CENTER_EN);
     }
 
     /**
@@ -104,8 +103,7 @@ public class HomePage {
      * Verify that the Index search page is opened
      */
     public boolean isIndexSearchPageOpened () {
-        String headerText = indexPageHeader.getText();
-        return headerText.equals("Знайти поштовий індекс");
+        return indexPageHeader.getText().equals(FIND_POSTAL_INDEX);
     }
 
     /**
@@ -119,7 +117,7 @@ public class HomePage {
      * Send keys to the index search input
      */
     public void sendKeysToIndexSearchInput () {
-        searchIndexInput.sendKeys("Дніпро", Keys.ENTER);
+        searchIndexInput.sendKeys(CITY_NAME, Keys.ENTER);
     }
 
     /**

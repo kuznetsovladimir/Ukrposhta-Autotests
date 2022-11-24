@@ -2,18 +2,19 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.ukrposhta.Pages.HomePage;
+import utils.TestData;
 import utils.Waiter;
 import utils.WebDriverFactory;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class HomePageTests {
+public class HomePageTests extends TestData {
 
     @BeforeMethod
     public void setUp() {
         WebDriverFactory driver = new WebDriverFactory();
         driver.GetDriver("FIREFOX");
-        open("https://ukrposhta.ua/");
+        open(UKR_POSHTA_LINK);
     }
 
     @Test (priority = 1)

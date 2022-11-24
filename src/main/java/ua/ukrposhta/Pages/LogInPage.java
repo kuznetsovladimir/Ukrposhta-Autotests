@@ -1,55 +1,51 @@
 package ua.ukrposhta.Pages;
 
 import com.codeborne.selenide.SelenideElement;
+import utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class LogInPage {
-    private final SelenideElement personalAccountHeader = $x("//*[@id=\"main-wrap\"]/div[2]/div/div[1]/div/div[1]");
+public class LogInPage extends TestData {
+
+    private final SelenideElement personalAccountHeader = $x("//div[@class=\"well well-md\"]/h3");
     private final SelenideElement logInButton = $x("//a[@rel=\"login-form\"]");
-    private final SelenideElement authorizationHeader = $x("//*[@id=\"login-form\"]/div[1]/h3");
-    private final SelenideElement forgotPasswordButton = $x("//*[@id=\"login-form\"]/form/div[4]/div/div/a[2]");
-    private final SelenideElement forgotPasswordSectionHeader = $x("//*[@id=\"login-form\"]/div[1]/h3");
-    private final SelenideElement emailInputField = $x("//*[@id=\"login-form\"]/form/div[1]/div/input");
-    private final SelenideElement getNewPasswordButton = $x("//*[@id=\"reset-password\"]");
-    private final SelenideElement checkMailboxMessage = $x("//*[@id=\"chaked-mail\"]");
-    private final SelenideElement passwordField = $x("//*[@id=\"login-form\"]/form/div[2]/div/input");
-    private final SelenideElement enterButton = $x("//*[@id=\"login-form\"]/form/div[3]/div/input");
-    private final SelenideElement stopSessionButton = $x("//*[@id=\"main-wrap\"]/div[1]/div/ul/li/a");
-    private final String validPass = "Qwerty123";
-    private final String invalidPass = "Qwerty143";
-    private final String validEmail = "kuznietsov.qatask@gmail.com";
-    private final String invalidEmail = "kuznietso.qatask@gmail.com";
-    private final SelenideElement errorMessagePass = $x("//*[@id=\"filds-error-message\"]/div");
-    private final SelenideElement errorMessageMail = $x("//*[@id=\"filds-error-message\"]/div");
+    private final SelenideElement authorizationHeader = $x("//div[@class=\"well well-lg\"]/h3");
+    private final SelenideElement emailInputField = $x("//input[@name=\"login-user\"]");
+    private final SelenideElement passwordField = $x("//input[@name=\"pass-user\"]");
+    private final SelenideElement enterButton = $x("//input[@type=\"submit\"]");
+    private final SelenideElement stopSessionButton = $x("//a[@class=\"your-account\"]");
+    private final SelenideElement errorMessageOnLogin = $x("//div[@class=\"text-center alert alert-danger\"]");
 
-
-
+    /**
+     * Get "Завершити Сеанс" button
+     */
     public SelenideElement getStopSessionButton () {
         return stopSessionButton;
     }
+
+    /**
+     * Get header of the "Особистий кабінет" page
+     */
     public  SelenideElement getPersonalAccountHeader() {
         return personalAccountHeader;
     }
-    public SelenideElement getErrorMessageMail () {
-        return errorMessageMail;
-    }
-    public SelenideElement getErrorMessagePass () {
-        return errorMessagePass;
-    }
-    public SelenideElement getAuthorizationHeader () {
-        return authorizationHeader;
-    }
+
     /**
-     * Verify Log in page header
+     * Get error message box on the "Авторизація" page
      */
-    public boolean registrationPageOpened () {
-        String header = personalAccountHeader.getText();
-        return header.equals("Особистий кабінет");
+    public SelenideElement getErrorMessageOnLogin () {
+        return errorMessageOnLogin;
     }
 
     /**
-     * Click on the Log In button
+     * Get header of the "Авторизація" page
+     */
+    public SelenideElement getAuthorizationHeader () {
+        return authorizationHeader;
+    }
+
+    /**
+     * Click on the "Увійти" button
      */
     public void clickOnTheLogInButton () {
         logInButton.click();
@@ -58,103 +54,67 @@ public class LogInPage {
     /**
      * Verify Authorization block header
      */
-    public boolean authorizationSectionOpened () {
-        String header = authorizationHeader.getText();
-        return header.equals("Авторизація");
+    public boolean isAuthorizationSectionOpened() {
+        return authorizationHeader.
+                getText().
+                equals("Авторизація");
     }
 
     /**
-     * Click on the Forgot Password button
+     * Verify "Wrong password" message
      */
-    public void clickOnTheForgotPasswordButton () {
-        forgotPasswordButton.click();
+    public boolean isVerifyErrorMessagePass() {
+        return errorMessageOnLogin.
+                getText().
+                equals("Пароль недійсний або користувач не має пароля.");
     }
 
     /**
-     * Verify Forgot Password section opened
+     * Verify "Wrong E-mail" message
      */
-    public boolean forgotPasswordSectionOpened () {
-        String header = forgotPasswordSectionHeader.getText();
-        return header.equals("Забули пароль?");
+    public boolean isVerifyErrorMessageMail() {
+        return errorMessageOnLogin.
+                getText().
+                equals("Немає запису користувача, що відповідає цьому ідентифікатору. Користувач може бути видалено.");
     }
 
     /**
-     * Fill E-mail field with a valid email
-     */
-    public void fillTheEmailField (String emailValue) {
-        emailInputField.sendKeys(emailValue);
-    }
-
-    /**
-     * Fill Password field with a valid password
-     */
-    public void fillPasswordField (String passwordValue) {
-        passwordField.sendKeys(passwordValue);
-    }
-
-    /**
-     * Fill Password field with an invalid password
-     */
-    public void fillPasswordFieldInvalid (String passwordValue) {
-        passwordField.sendKeys(passwordValue);
-    }
-
-    /**
-     * Fill Email field with invalid data
-     */
-    public void fillEmailFieldInvalid (String emailValue) {
-        emailInputField.sendKeys(emailValue);
-    }
-
-    /**
-     * Verify that password is hidden
-     */
-    public boolean verifyPasswordIsHidden (String password) {
-        String inputValue = passwordField.getText();
-        return !inputValue.equals(password);
-    }
-
-    /**
-     * Verify Error message Pass
-     */
-    public boolean verifyErrorMessagePass () {
-        String message = errorMessagePass.getText();
-        return message.equals("Пароль недійсний або користувач не має пароля.");
-    }
-
-    /**
-     * Verify Error message Mail
-     */
-    public boolean verifyErrorMessageMail () {
-        String message = errorMessageMail.getText();
-        return message.equals("Немає запису користувача, що відповідає цьому ідентифікатору. Користувач може бути видалено.");
-    }
-
-    /**
-     * Click on the Enter button
+     * Click on the "Зайти" button
      */
     public void clickOnTheEnterButton () {
         enterButton.click();
     }
+
     /**
      * Verify that the user is logged in
      */
     public boolean isVerifyLogIn() {
-        String text = stopSessionButton.getText();
-        return text.equals("ЗАВЕРШИТИ СЕАНС");
-    }
-    /**
-     * Click on the Get New Password button
-     */
-    public void clickOnTheGetNewPassButton () {
-        getNewPasswordButton.click();
+        return stopSessionButton.
+                getText().
+                equals("ЗАВЕРШИТИ СЕАНС");
     }
 
     /**
-     * Verify Check Mailbox message
+     * Log in with valid credentials
      */
-    public boolean checkMailboxMessageDisplayed () {
-        String message = checkMailboxMessage.getText();
-        return message.equals("Перевірте пошту.");
+    public void logInWithValidCreds() {
+        emailInputField.sendKeys(VALID_EMAIL);
+        passwordField.sendKeys(VALID_PASS);
+        enterButton.click();
+    }
+
+    /**
+     * Log in with invalid credentials
+     */
+    public void logInWithInvalidCreds(String type) {
+        if(type.equalsIgnoreCase("Email")){
+            emailInputField.sendKeys(INVALID_EMAIL);
+            passwordField.sendKeys(VALID_PASS);
+            enterButton.click();
+        } else if (type.equalsIgnoreCase("Password")) {
+            emailInputField.sendKeys(VALID_EMAIL);
+            passwordField.sendKeys(INVALID_PASS);
+            enterButton.click();
+        }
     }
 }

@@ -1,4 +1,3 @@
-import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -8,7 +7,6 @@ import utils.TestData;
 import utils.Waiter;
 import utils.WebDriverFactory;
 
-import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginModuleTests extends TestData {
@@ -17,10 +15,9 @@ public class LoginModuleTests extends TestData {
     public void setUp() {
         WebDriverFactory driver = new WebDriverFactory();
         driver.GetDriver("FIREFOX");
-        open("https://ukrposhta.ua/");
-        SelenideElement acceptCookiesButton = $x("//*[@id=\"masseg_cookie\"]");
-        if(acceptCookiesButton.isDisplayed())
-        {acceptCookiesButton.click();}
+        open(UKR_POSHTA_LINK);
+        if(cookiesButton.isDisplayed())
+        {cookiesButton.click();}
     }
 
 
@@ -33,12 +30,10 @@ public class LoginModuleTests extends TestData {
         homePage.clickOnTheRegistrationButton();
         waiter.waitForVisibility(logInPage.getPersonalAccountHeader());
         logInPage.clickOnTheLogInButton();
-        logInPage.fillTheEmailField(VALID_EMAIL);
-        logInPage.fillPasswordField(VALID_PASS);
-        logInPage.clickOnTheEnterButton();
+        logInPage.logInWithValidCreds();
         waiter.waitForVisibility(logInPage.getStopSessionButton());
-        logInPage.getStopSessionButton().click();
         Assert.assertTrue(logInPage.isVerifyLogIn());
+        logInPage.getStopSessionButton().click();
     }
 
     @Test (priority = 2)
@@ -50,12 +45,9 @@ public class LoginModuleTests extends TestData {
         homePage.clickOnTheRegistrationButton();
         waiter.waitForVisibility(logInPage.getPersonalAccountHeader());
         logInPage.clickOnTheLogInButton();
-        logInPage.fillEmailFieldInvalid(INVALID_EMAIL);
-        logInPage.fillPasswordField(VALID_PASS);
-        Assert.assertTrue(logInPage.verifyPasswordIsHidden(VALID_PASS));
-        logInPage.clickOnTheEnterButton();
-        waiter.waitForVisibility(logInPage.getErrorMessageMail());
-        Assert.assertTrue(logInPage.verifyErrorMessageMail());
+        logInPage.logInWithInvalidCreds("Email");
+        waiter.waitForVisibility(logInPage.getErrorMessageOnLogin());
+        Assert.assertTrue(logInPage.isVerifyErrorMessageMail());
     }
 
     @Test (priority = 3)
@@ -67,13 +59,9 @@ public class LoginModuleTests extends TestData {
         homePage.clickOnTheRegistrationButton();
         waiter.waitForVisibility(logInPage.getPersonalAccountHeader());
         logInPage.clickOnTheLogInButton();
-        waiter.waitForVisibility(logInPage.getAuthorizationHeader());
-        logInPage.fillTheEmailField(VALID_EMAIL);
-        logInPage.fillPasswordFieldInvalid(INVALID_PASS);
-        Assert.assertTrue(logInPage.verifyPasswordIsHidden(INVALID_PASS));
-        logInPage.clickOnTheEnterButton();
-        waiter.waitForVisibility(logInPage.getErrorMessagePass());
-        Assert.assertTrue(logInPage.verifyErrorMessagePass());
+        logInPage.logInWithInvalidCreds("Password");
+        waiter.waitForVisibility(logInPage.getErrorMessageOnLogin());
+        Assert.assertTrue(logInPage.isVerifyErrorMessagePass());
     }
 
     @Test (priority = 4)
@@ -87,6 +75,6 @@ public class LoginModuleTests extends TestData {
         logInPage.clickOnTheLogInButton();
         waiter.waitForVisibility(logInPage.getAuthorizationHeader());
         logInPage.clickOnTheEnterButton();
-        Assert.assertTrue(logInPage.authorizationSectionOpened());
+        Assert.assertTrue(logInPage.isAuthorizationSectionOpened());
     }
 }

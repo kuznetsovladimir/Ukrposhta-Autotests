@@ -16,12 +16,12 @@ public class UkrPoshtaStandartPage extends TestData {
     private final ElementsCollection receiverAddressDropdowns = $$(By.xpath("//select[@id=\"region\" or @id=\"district\" or @id=\"city\"]"));
     private final ElementsCollection deliveryMethodDropdownList = $$(By.xpath("//option[@data-ng-repeat=\"(key,type) in deliveryTypes\"]"));
 
-    private final SelenideElement standartCreateBtn = $x("//button[@data-ng-click=\"createShipment()\"]");
-    private final SelenideElement streetInput = $x("//input[@id=\"street\"]");
-    private final SelenideElement houseInput = $x("//input[@id=\"house\"]");
-    private final SelenideElement weightInput = $x("//input[@id=\"weight\"]");
-    private final SelenideElement lengthInput = $x("//input[@id=\"length\"]");
-    private final SelenideElement submitButton = $x("//button[@class=\"btn btn-lg form-bottom-btn account-btn-success\"]");
+    private final SelenideElement standartCreateBtn = $("#standardCreate");
+    private final SelenideElement streetInput = $("#street");
+    private final SelenideElement houseInput = $("#house");
+    private final SelenideElement weightInput = $("#weight");
+    private final SelenideElement lengthInput = $("#length");
+    private final SelenideElement submitButton = $("#submit-button");
     private final SelenideElement deliveryMethodDropdown = $("#delivery-method");
     private final SelenideElement deliveryMethodOption = $x("//option[@value=\"W2W\"]");
 
@@ -30,19 +30,32 @@ public class UkrPoshtaStandartPage extends TestData {
     private final SelenideElement despatchMoreInfoReceiverName = $x("//div[@class=\"tab-content\"]/div[1]/div[2]/div/div/div[2]/table/tbody/tr[3]/td");
     private final SelenideElement despatchMoreInfoReceiverPhone = $x("//div[@class=\"tab-content\"]/div[1]/div[2]/div/div/div[2]/table/tbody/tr[4]/td");
     private final SelenideElement modifyButton = $x("//button[@id=\" standardChange\"]");
-    private final SelenideElement phoneInputModifyPage = $x("//input[@id=\"phone\"]");
-    private final SelenideElement deleteDespatchButton = $x("//button[@id=\"standardRemove\"]");
+    private final SelenideElement phoneInputModifyPage = $("#phone");
+    private final SelenideElement deleteDespatchButton = $("#standardRemove");
     private final SelenideElement deleteMessageBox = $x("//div[@class=\"modal-footer\"]/div[3]");
     private final SelenideElement deleteMessage = $x("//div[@class=\"modal-footer\"]/div[3]/h4");
     private final SelenideElement deleteButton = $x("//div[@class=\"modal-footer\"]/div[3]/div[1]/button[1]");
     private final SelenideElement cancelButton = $x("//div[@class=\"modal-footer\"]/div[3]/div[1]/button[2]");
-    private final SelenideElement noDespatchesMessageBox = $x("//*[@id=\"main-wrap\"]/div[2]/div/div[2]/div[2]/div/div[4]/div/div[1]");
+    private final SelenideElement noDespatchesMessageBox = $x("//div[@class=\"alert alert-danger ng-scope\"]");
+    private final SelenideElement stopSessionButton = $x("//a[@class=\"your-account\"]");
 
-
+    /**
+     * Click on the "Створити" button
+     */
     public void clickOnTheStandartCreateBtn() {
         standartCreateBtn.click();
     }
 
+    /**
+     * Click on the "Завершити Сеанс" button
+     */
+    public void clickOnTheStopSessionButton () {
+        stopSessionButton.click();
+    }
+
+    /**
+     * Add first set of data to the list
+     */
     public ArrayList<String> setReceiverData () {
         ArrayList<String> data = new ArrayList<>();
         data.add("Іванов");
@@ -52,6 +65,9 @@ public class UkrPoshtaStandartPage extends TestData {
         return data;
     }
 
+    /**
+     * Add all delivery methods to the list
+     */
     public ArrayList<String> deliveryMethods () {
         ArrayList<String> values = new ArrayList<>();
         values.add("склад – склад");
@@ -61,21 +77,25 @@ public class UkrPoshtaStandartPage extends TestData {
         return values;
     }
 
+    /**
+     * Fill the receiver section inputs with proper data
+     */
     public void fillReceiverSection () {
-        boolean state = true;
         for(int i = 0; i < receiverInputFields.size(); i++){
             receiverInputFields.get(i).sendKeys(setReceiverData().get(i));
         }
     }
 
+    /**
+     * Click on the "Спосіб доставки" dropdown
+     */
     public void clickOnTheDeliveryDropdown () {
         deliveryMethodDropdown.click();
     }
 
-    public void clickOnTheDeliveryOption () {
-        deliveryMethodOption.click();
-    }
-
+    /**
+     * Fill the receiver address section dropdowns with proper data
+     */
     public void fillReceiverAddressDropdowns () {
         for(int i = 0; i < receiverAddressDropdowns.size(); i++){
             receiverAddressDropdowns.get(i).click();
@@ -83,82 +103,103 @@ public class UkrPoshtaStandartPage extends TestData {
         }
     }
 
-    public void fillStreetInput () {
-        streetInput.sendKeys("вул. Будівельників");
-    }
-
-    public void fillHouseInput () {
-        houseInput.sendKeys("1");
-    }
-
-    public void fillWeightInput () {
-        weightInput.sendKeys("1000");
-    }
-
-    public void fillLengthInput () {
-        lengthInput.sendKeys("15");
-    }
-
+    /**
+     * Click on the "Створити" button
+     */
     public void clickOnSubmitButton () {
         submitButton.click();
     }
 
+    /**
+     * Get the despatch card block
+     */
     public SelenideElement getDespatchCard() {
         return despatchCard;
     }
 
+    /**
+     * Click on the "Більше інформації" button
+     */
     public void clickOnTheMoreInfoButton () {
         despatchMoreInfoButton.click();
     }
 
-    public boolean verifyReceiverName () {
+    /**
+     * Verify that the receiver's name used on despatch creation is displayed in the despatch
+     */
+    public boolean isReceiverNameProper () {
         return despatchMoreInfoReceiverName.getText().equals("Іванов Іван Іванович");
     }
 
+    /**
+     * Click on the "Редагувати" button
+     */
     public void clickOnModifyButton () {
         modifyButton.click();
     }
+
+    /**
+     * Remove data from the "Телефон" input
+     */
     public void clearPhoneInput () {
         phoneInputModifyPage.clear();
     }
 
+    /**
+     * Fill the "Телефон" input with the new data
+     */
     public void fillPhoneInput () {
         phoneInputModifyPage.sendKeys("+380970121385");
     }
 
-    public boolean verifyNewNumber () {
+    /**
+     * Verify that the new phone number is displayed in the despatch
+     */
+    public boolean isNumberProper () {
         return despatchMoreInfoReceiverPhone.getText().equals("+380970121385");
     }
 
+    /**
+     * Click on the "Видалити" button
+     */
     public void clickOnTheDeleteDespatchButton () {
         deleteDespatchButton.click();
     }
 
+    /**
+     * Get the delete message block
+     */
     public SelenideElement getDeleteMessageBox () {
         return deleteMessageBox;
     }
 
-    public boolean verifyConfirmDeleteBox () {
-        boolean verified = true;
-        if(!(deleteMessage.getText().equals(DELETE_MESSAGE) || deleteButton.getText().equals(DELETE_BUTTON_NAME) || cancelButton.getText().equals(CANCEL_BUTTON_NAME))){
-            verified = false;
-        } return verified;
+    /**
+     * Verify that the "Confirm Delete" box contains valid message and buttons
+     */
+    public boolean isConfirmDeleteBoxProper () {
+        return (deleteMessage.getText().equals(DELETE_MESSAGE) ||
+                deleteButton.getText().equals(DELETE_BUTTON_NAME) ||
+                    cancelButton.getText().equals(CANCEL_BUTTON_NAME));
     }
 
+    /**
+     * Click on the "Видалити" button
+     */
     public void clickOnDeleteButton () {
         deleteButton.click();
     }
 
-    public SelenideElement getNoDespatchesMessageBox () {
-        return noDespatchesMessageBox;
-    }
-    public boolean verifyDespatchDeleted () {
+    /**
+     * Verify that the despatch is deleted
+     */
+    public boolean isDespatchDeleted() {
         return noDespatchesMessageBox.getText().equals(NO_DESPATCHES_MESSAGE);
     }
 
-
-
-     public boolean verifyDeliveryOptionsValues () {
+    /**
+     * Verify that the "Спосіб доставки" dropdown-list values are proper
+     */
+    public boolean isDeliveryOptionsProper() {
         boolean verify = true;
         for (SelenideElement selenideElement : deliveryMethodDropdownList) {
 
@@ -171,39 +212,74 @@ public class UkrPoshtaStandartPage extends TestData {
         return verify;
     }
 
+    /**
+     * Get first input from the receiver section
+     */
     public SelenideElement getFirstReceiverInputField () {
         return receiverInputFields.get(0);
     }
 
+    /**
+     * Get "Створити" button
+     */
     public SelenideElement getSubmitButton () {
         return submitButton;
     }
 
+    /**
+     * Get receiver name from the despatch
+     */
     public SelenideElement getDespatchMoreInfoReceiverName () {
         return despatchMoreInfoReceiverName;
     }
 
+    /**
+     * Get the phone input on the modify page
+     */
     public SelenideElement getPhoneInputModifyPage () {
         return phoneInputModifyPage;
     }
 
-    public SelenideElement getDespatchMoreInfoReceiverPhone () {
-        return despatchMoreInfoReceiverPhone;
-    }
-
+    /**
+     * Get "Видалити" button
+     */
     public SelenideElement getDeleteDespatchButton () {
         return deleteDespatchButton;
     }
 
+    /**
+     * Get first value from the "Спосіб доставки" dropdown-list
+     */
     public SelenideElement getDeliveryMethodDropdownList () {
         return deliveryMethodDropdownList.get(0);
     }
 
+    /**
+     * Get "Більше інформації" button
+     */
     public SelenideElement getDespatchMoreInfoButton () {
         return despatchMoreInfoButton;
     }
-     public SelenideElement getStandartCreateBtn () {
+
+    /**
+     * Get "Створити" button
+     */
+    public SelenideElement getStandartCreateBtn () {
         return standartCreateBtn;
+     }
+
+    /**
+     * Fill all mandatory fields with proper data
+     */
+     public void fillMandatoryFields () {
+        fillReceiverSection();
+        deliveryMethodDropdown.click();
+        deliveryMethodOption.click();
+        fillReceiverAddressDropdowns();
+        streetInput.sendKeys("вул. Будівельників");
+        houseInput.sendKeys("1");
+        weightInput.sendKeys("1000");
+        lengthInput.sendKeys("15");
      }
 }
 
