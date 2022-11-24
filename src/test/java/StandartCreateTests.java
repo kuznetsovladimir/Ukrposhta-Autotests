@@ -17,10 +17,6 @@ public class StandartCreateTests extends TestData {
     @BeforeMethod
     public void setUp () {
         WebDriverFactory driver = new WebDriverFactory();
-        HomePage homePage  = new HomePage();
-        LogInPage logInPage = new LogInPage();
-        Waiter waiter = new Waiter();
-        PersonalAccountPage personalAccountPage = new PersonalAccountPage();
 
         driver.GetDriver("firefox");
         open(UKR_POSHTA_LINK);
